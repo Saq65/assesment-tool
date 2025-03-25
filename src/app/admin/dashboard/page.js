@@ -55,9 +55,6 @@ const Dashboard = () => {
         getDashboardData()
     }, [])
 
-
-
-
     return (
         <PanelLayout pageTitle={"Dashboard"} breadcrumbsData={[]}>
             <DashboardStats stats={statsData} />
