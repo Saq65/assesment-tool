@@ -126,9 +126,9 @@ const ManageTest = () => {
                 <TestsDatatable
                     buttons={
                         <div className="flex justify-end">
-                            <Button size="medium" onClick={openGenerateDialogHandler}>
+                            <button className="btn btn-primary text-light" size="medium" onClick={openGenerateDialogHandler}>
                                 Generate Test
-                            </Button>
+                            </button>
                         </div>
                     }
                     filters={filters}

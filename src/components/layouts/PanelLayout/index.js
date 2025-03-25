@@ -80,7 +80,7 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
                         <ProfileDropdown />
                     </div>
                 </div>
-                <div className="h-full bg-newCodes-background px-6 py-4">
+                <div className="h-full bg-newCodes-background px-6 py-3">
                     {children}
                 </div>
             </div>

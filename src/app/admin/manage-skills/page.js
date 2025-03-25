@@ -151,7 +151,7 @@ const ManageSkills = () => {
             <div className="flex justify-end mr-4">
                 {/* <h3 className="text-blue-400">Add new skill</h3> */}
 
-                <button className="bg-gray-700 hover:bg-purple-700 text-white px-4 py-2 rounded-md shadow-md" onClick={() => handleOpenDialog()}>
+                <button className="bg-gray-700 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow-md" onClick={() => handleOpenDialog()}>
                     Add New Skill
                 </button>
             </div>
