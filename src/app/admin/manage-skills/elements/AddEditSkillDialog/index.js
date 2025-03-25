@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
   TextField,
+  IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import { useFormik } from "formik";
-import * as Yup from "yup"; // Yup validation
+import * as Yup from "yup";
 import { editItemSelector } from "@/store/features/common/selectors";
 import { useSelector } from "react-redux";
 import Button from "@/components/atoms/Button";
@@ -49,6 +51,12 @@ const AddEditSkillDialog = ({
     <Dialog
       open={openDialog}
       onClose={handleCloseDialog}
+      BackdropProps={{
+        sx: {
+          backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark overlay
+          backdropFilter: "blur(5px)", // Blur effect
+        },
+      }}
       sx={{
         "& .MuiDialog-paper": {
           backgroundColor: "#272C33",
@@ -61,6 +69,18 @@ const AddEditSkillDialog = ({
       <form onSubmit={formik.handleSubmit}>
         <DialogTitle className="text-white text-center font-semibold text-xl">
           {editItem ? "Edit Skill" : "Add New Skill"}
+          <IconButton
+            aria-label="close"
+            onClick={handleCloseDialog}
+            sx={{
+              position: "absolute",
+              right: 8,
+              top: 8,
+              color: "white",
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
         </DialogTitle>
         <DialogContent sx={{ paddingTop: "10px !important" }}>
           <TextField
@@ -86,13 +106,6 @@ const AddEditSkillDialog = ({
         <DialogActions sx={{ justifyContent: "center", gap: "10px" }}>
           <Button
             onClick={handleCloseDialog}
-            // sx={{
-            //   backgroundColor: "#374151",
-            //   color: "white",
-            //   padding: "10px 20px",
-            //   borderRadius: "8px",
-            //   "&:hover": { backgroundColor: "#475569" },
-            // }}
             variant="primary"
             size="medium"
             padding="10px 20px"
@@ -101,13 +114,6 @@ const AddEditSkillDialog = ({
           </Button>
           <Button
             type="submit"
-            // sx={{
-            //   backgroundColor: "#8C52FF",
-            //   color: "white",
-            //   padding: "10px 20px",
-            //   borderRadius: "8px",
-            //   "&:hover": { backgroundColor: "#7A44E5" },
-            // }}
             variant="primary"
             size="medium"
             padding="10px 20px"

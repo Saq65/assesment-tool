@@ -205,6 +205,7 @@ const ManageSkills = () => {
                 skillName={skillName}
                 setSkillName={setSkillName}
                 editIndex={editIndex}
+
             />
 
             <ConfirmDelete message={Array.isArray(deleteId) && deleteId.length > 1 ? "Are you sure you want to delete these skills ?" : "Are you sure you want to delete this skill ?"} open={openDeleteDialog} onClose={() => {
