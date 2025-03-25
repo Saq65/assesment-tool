@@ -150,12 +150,13 @@ const ManageSkills = () => {
             {/* Add Skill Button */}
             <div className="flex justify-end mr-4">
                 {/* <h3 className="text-blue-400">Add new skill</h3> */}
-                <Button variant="primary" size="medium" onClick={() => handleOpenDialog()}>
-                    Add new skill
-                </Button>
+
+                <button className="bg-gray-700 hover:bg-purple-700 text-white px-4 py-2 rounded-md shadow-md" onClick={() => handleOpenDialog()}>
+                    Add New Skill
+                </button>
             </div>
 
-            <div className="mt-4 bg-newCodes-background p-6">
+            <div className="mt-2 bg-newCodes-background p-6">
 
                 <div
                     className={`transition-all duration-300 flex justify-end ease-in-out ${checkboxSelection ? 'opacity-0 h-0 visibility-hidden' : 'opacity-100 h-auto visibility-visible'

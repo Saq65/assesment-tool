@@ -38,15 +38,15 @@ const JobProfileChart = ({ data = [] }) => {
                     dataLabels: {
                         position: 'top', // Position data labels at the top of the bars
                     },
-                    columnWidth: '25px',
+                    columnWidth: '18px',
                 },
             },
             dataLabels: {
                 enabled: true,
                 formatter: (val) => `${val}%`,
-                offsetY: -18, // Adjust this value to fine-tune the vertical position of the labels
+                offsetY: -10, // Adjust this value to fine-tune the vertical position of the labels
                 style: {
-                    fontSize: '12px',
+                    fontSize: '6.9px',
                     colors: ['#94A3B8'],
                 },
             },
@@ -54,14 +54,14 @@ const JobProfileChart = ({ data = [] }) => {
                 categories: data.map((item) => item.candidateJobPosition),
                 labels: {
                     style: {
-                        colors: '#94A3B8',
-                        fontSize: '10px',
+                        colors: '#fff',
+                        fontSize: '8px',
                     },
-                    rotate: -45,
+                    rotate: -54,
 
                 },
                 axisBorder: {
-                    color: '#334155',
+                    color: '#fff',
                 },
                 axisTicks: {
                     show: false,
@@ -74,15 +74,18 @@ const JobProfileChart = ({ data = [] }) => {
                 max: 100,
                 labels: {
                     style: {
-                        colors: '#94A3B8',
+                        fontSize: '11px',
+                        colors: '#fff',
+                        fontWeight:'700'
                     },
                     formatter: function (value) {
                         return Math.floor(value);
                     },
+                    
                 },
             },
             fill: {
-                opacity: 1,
+                opacity: 5,
             },
             tooltip: {
                 y: {
@@ -111,12 +114,12 @@ const JobProfileChart = ({ data = [] }) => {
     };
 
     return (
-        <div className="col-span-2 rounded-lg p-4 bg-[#1E293B] mb-6  flex flex-col justify-between">
+        <div className="rounded-lg  bg-[#222e44] mt-3  w-100">
             <h2 className="text-white text-left text-[18px] font-medium leading-[27px]">
                 Job Opening Performance vs. Benchmark
             </h2>
-            <div>
-                <Chart options={chartData.options} series={chartData.series} type="bar" height={350} />
+            <div className='mt-4 w-100 items-center'>
+                <Chart options={chartData.options} series={chartData.series} type="bar" height={400} />
             </div>
         </div>
     );

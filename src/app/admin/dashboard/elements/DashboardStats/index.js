@@ -87,15 +87,15 @@ const DashboardStats = () => {
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6 bg-newCodes-background">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 bg-newCodes-background">
             {stats.map((stat, index) => (
                 <Link key={index} href={stat.link} className="block">
-                    <div className="bg-newCodes-foreground rounded-2xl shadow-lg p-5 flex flex-col justify-between gap-y-3 max-h-[250px] 
-                    transition-transform duration-200 transform hover:scale-105 hover:shadow-2xl cursor-pointer">
-                        <h2 className="text-white text-center text-[18px] font-medium leading-[27px]">
+                    <div className="bg-[#222e44] rounded-2xl shadow-lg p-5 flex flex-col justify-center gap-y-3 max-h-[220px] 
+                    transition-transform duration-200 transform hover:scale-105 hover:shadow-2xl cursor-pointer items-center">
+                        <h2 className="text-white text-center text-[15px] font-medium leading-[9px]">
                             {stat.title}
                         </h2>
-                        <p className={`text-[55px] font-bold mt-4 text-center ${stat.color || "text-gray-200"}`}>
+                        <p className={`text-[40px] font-bold mt-4 text-center ${stat.color || "text-gray-200"}`}>
                             <CountUp
                                 start={0}
                                 end={parseFloat(stat.value)}

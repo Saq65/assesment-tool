@@ -19,8 +19,8 @@ const SkillCard = ({ id, title, levels, onEdit, onDelete, selected, showOptions 
 
     return (
         <div
-            className={`bg-newCodes-foreground text-white rounded-2xl shadow-lg p-5 flex flex-col justify-between gap-y-3 max-h-[250px]
-            transition-transform duration-200 transform hover:scale-105 hover:shadow-2xl cursor-pointer`}
+            className={`bg-[#222e44] text-white rounded-2xl shadow-lg p-4 gap-2 flex flex-col justify-between min-h-[240px]  max-h-[260px]
+            transition-transform duration-200 transform hover:scale-105 hover:shadow-2xl cursor-pointer `}
             onClick={() => onClick(id)}
         >
             <div className="flex justify-between items-center">

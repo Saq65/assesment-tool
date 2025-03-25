@@ -1,5 +1,6 @@
 "use client";
 import localFont from "next/font/local";
+import "bootstrap/dist/css/bootstrap.css"
 import "./globals.css";
 import { ThemeProvider } from "@mui/material";
 import StoreProvider from "@/providers/StoreProvider";

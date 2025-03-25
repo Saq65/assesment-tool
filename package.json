@@ -29,6 +29,7 @@
     "ace-builds": "^1.37.1",
     "apexcharts": "^4.2.0",
     "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
     "cookies-next": "^4.3.0",
     "country-flag-icons": "^1.5.13",
     "date-fns": "^4.1.0",

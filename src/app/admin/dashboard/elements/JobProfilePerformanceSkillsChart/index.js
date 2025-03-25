@@ -99,7 +99,7 @@ const JobProfilePerformanceSkillsChart = ({ data = [] }) => {
                         return `${fullName}: ${val}%`;
                     },
                 },
-                theme: 'dark',
+                theme: 'light',
             },
             legend: {
                 show: true,
@@ -118,7 +118,7 @@ const JobProfilePerformanceSkillsChart = ({ data = [] }) => {
     };
 
     return (
-        <div className="rounded-lg p-4 bg-[#1E293B] mb-6 relative overflow-hidden flex flex-col justify-between">
+        <div className="rounded-lg p-4 bg-[#222e44] mb-6 overflow-hidden ">
             {/* Title */}
             <div className='flex items-start justify-between'>
                 <h2 className="text-white text-left text-[18px] font-medium leading-[27px] mb-4">
