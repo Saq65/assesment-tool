@@ -46,7 +46,7 @@ const SearchInput = ({ handleSearch, clearSearch }) => {
             }}
             sx={{
                 width: "250px",
-                backgroundColor: "#1f2937",
+                backgroundColor: "#272C33",
                 borderRadius: "25px",
                 "& .MuiOutlinedInput-root": {
                     paddingLeft: "8px",

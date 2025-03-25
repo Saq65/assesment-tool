@@ -151,9 +151,16 @@ const ManageSkills = () => {
             <div className="flex justify-end mr-4">
                 {/* <h3 className="text-blue-400">Add new skill</h3> */}
 
-                <button className="bg-gray-700 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow-md" onClick={() => handleOpenDialog()}>
-                    Add New Skill
-                </button>
+                <Button
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                    size="medium"
+                    onClick={() => handleOpenDialog()}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")} 
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")} 
+                >
+                    Add new skill
+                </Button>
+
             </div>
 
             <div className="mt-2 bg-newCodes-background p-6">

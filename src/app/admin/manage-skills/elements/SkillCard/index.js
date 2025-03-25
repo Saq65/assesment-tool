@@ -19,7 +19,7 @@ const SkillCard = ({ id, title, levels, onEdit, onDelete, selected, showOptions 
 
     return (
         <div
-            className={`bg-[#222e44] text-white rounded-2xl shadow-lg p-4 gap-2 flex flex-col justify-between min-h-[240px]  max-h-[260px]
+            className={`bg-newCodes-foreground text-white rounded-2xl shadow-lg p-4 gap-2 flex flex-col justify-between min-h-[240px]  max-h-[260px]
             transition-transform duration-200 transform hover:scale-105 hover:shadow-2xl cursor-pointer `}
             onClick={() => onClick(id)}
         >
@@ -54,7 +54,7 @@ const SkillCard = ({ id, title, levels, onEdit, onDelete, selected, showOptions 
                     <Link
                         href={checkboxSelection ? "" : `/admin/manage-questions?skill=${id}&experience=${level?.levelId}`}
                         key={index}
-                        className={`text-white text-sm py-2 text-center rounded-md bg-primary-200 border border-primary-400 
+                        className={`text-white text-sm py-2 text-center rounded-md border border-primary-400 
                         transition-transform duration-200 ${checkboxSelection ? "cursor-default" : "hover:text-blue-400 hover:scale-105"}`}
                         onClick={(e) => {
                             if (checkboxSelection) {

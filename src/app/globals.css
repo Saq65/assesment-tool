@@ -93,3 +93,8 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.skilltitle:hover{
+  display: block;
+  overflow:auto;
+}

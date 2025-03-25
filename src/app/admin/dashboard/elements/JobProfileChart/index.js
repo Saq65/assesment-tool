@@ -114,7 +114,7 @@ const JobProfileChart = ({ data = [] }) => {
     };
 
     return (
-        <div className="rounded-lg  bg-[#222e44] mt-3  w-100">
+        <div className="rounded-lg  bg-newCodes-foreground mt-3  w-100">
             <h2 className="text-white text-left text-[18px] font-medium leading-[27px]">
                 Job Opening Performance vs. Benchmark
             </h2>

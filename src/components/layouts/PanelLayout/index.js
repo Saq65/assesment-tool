@@ -60,7 +60,7 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
                                     }}
                                 /> */}
                             </button>
-                            <div className="h-full bg-[#222e44] py-27">
+                            <div className="h-full bg-newCodes-foreground py-27">
                                 {isSidebarOpen ? <SidebarFull
                                     isSidebarOpen={isSidebarOpen}
                                     toggleSidebar={toggleSidebar}

@@ -126,9 +126,16 @@ const ManageTest = () => {
                 <TestsDatatable
                     buttons={
                         <div className="flex justify-end">
-                            <button className="btn btn-primary text-light" size="medium" onClick={openGenerateDialogHandler}>
+                          
+                            <Button
+                                style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                                size="medium"
+                                onClick={openGenerateDialogHandler}
+                                onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                                onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                            >
                                 Generate Test
-                            </button>
+                            </Button>
                         </div>
                     }
                     filters={filters}

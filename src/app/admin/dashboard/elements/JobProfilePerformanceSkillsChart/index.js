@@ -118,7 +118,7 @@ const JobProfilePerformanceSkillsChart = ({ data = [] }) => {
     };
 
     return (
-        <div className="rounded-lg p-4 bg-[#222e44] mb-6 overflow-hidden ">
+        <div className="rounded-lg p-4 bg-newCodes-foreground mb-6 overflow-hidden ">
             {/* Title */}
             <div className='flex items-start justify-between'>
                 <h2 className="text-white text-left text-[18px] font-medium leading-[27px] mb-4">

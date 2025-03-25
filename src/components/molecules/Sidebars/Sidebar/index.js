@@ -14,12 +14,12 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
 
     return (
         <>
-            <div className="flex justify-center">
+            <div className="flex justify-center items-end">
                 <SidebarHeader />
 
             </div>
 
-            <ul className="flex items-center h-[90%] flex-col overflow-y-auto transition-all duration-300 ease-in-out">
+            <ul className="flex items-end h-[90%] flex-col overflow-y-auto transition-all duration-300 ease-in-out">
                 {sideBarData?.map((val) => (
                     <li key={val?.label} className="w-full flex justify-center">
                         <Link

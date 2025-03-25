@@ -137,7 +137,7 @@ const CustomDatatable = ({
                     </div>
 
                 </div>
-                <Paper sx={{ padding: 3, background: "#1e293b !important" }}>
+                <Paper sx={{ padding: 3, background: "#272C33 !important" }}>
 
                     <div>
 
