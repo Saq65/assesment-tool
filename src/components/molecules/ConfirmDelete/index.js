@@ -16,18 +16,32 @@ const ConfirmDelete = ({
     };
 
     return (
-        <Dialog open={open} onClose={onClose} sx={{
-            "& .MuiDialog-paper": {
-                backgroundColor: "#1E293B", // Custom background color
-            },
-        }}>
+        <Dialog
+            open={open}
+            onClose={onClose}
+            sx={{
+                backdropFilter: "blur(8px)", // Apply blur effect to the background
+                WebkitBackdropFilter: "blur(8px)", // Safari support
+                "& .MuiDialog-paper": {
+                    backgroundColor: "#1D2126", // Custom background color for the dialog box
+                },
+            }}
+        >
             <DialogTitle>{title}</DialogTitle>
             <DialogContent>{message}</DialogContent>
             <DialogActions>
-                <Button onClick={onClose} color="secondary" sx={{ color: "#93C5FD" }}>
+                <Button onClick={onClose}
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                >
                     {cancelButtonText}
                 </Button>
-                <Button onClick={handleConfirm} color="primary" sx={{ color: "#EF4444" }}>
+                <Button onClick={handleConfirm} 
+                 style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                 onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                 onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                >
                     {deleteButtonText}
                 </Button>
             </DialogActions>
@@ -36,25 +50,12 @@ const ConfirmDelete = ({
 };
 
 ConfirmDelete.propTypes = {
-    /** Controls whether the dialog is open or not */
     open: PropTypes.bool.isRequired,
-
-    /** Callback function to handle closing the dialog */
     onClose: PropTypes.func.isRequired,
-
-    /** Callback function to handle delete action */
     onDelete: PropTypes.func.isRequired,
-
-    /** Message to display in the dialog content */
     message: PropTypes.string,
-
-    /** Title for the dialog */
     title: PropTypes.string,
-
-    /** Text for the cancel button */
     cancelButtonText: PropTypes.string,
-
-    /** Text for the delete button */
     deleteButtonText: PropTypes.string,
 };
 

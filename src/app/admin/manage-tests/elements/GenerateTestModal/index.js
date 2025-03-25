@@ -131,7 +131,7 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
 
 
     return (
-        <Dialog open={openDialog} onClose={handleCloseDialog} sx={{ '& .MuiDialog-paper': { backgroundColor: '#1E293B', minWidth: '400px', overflow: "hidden" } }}>
+        <Dialog open={openDialog} onClose={handleCloseDialog} sx={{ '& .MuiDialog-paper': { backgroundColor: '#272C33', minWidth: '400px', overflow: "hidden" } }}>
             <h3 className='text-[18px] leading-6 px-6  font-bold mt-5'>Generate Test</h3>
             <form onSubmit={formik.handleSubmit} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <div className='max-h-[calc(100vh-200px)] px-6 overflow-y-auto'
@@ -329,13 +329,20 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                         </Grid>
                     </Grid>
                 </div>
-                <div className='sticky bottom-0 bg-[#1E293B] z-10 flex justify-end px-6 gap-x-2 py-5'>
-                    <Button onClick={handleCloseDialog} variant='secondary' size="small">
+                <div className='sticky bottom-0 bg-[#272C33] z-10 flex justify-end px-6 gap-x-2 py-5'>
+                    <Button onClick={handleCloseDialog}
+                        style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                        onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                        size="small">
                         Cancel
                     </Button>
                     <Button
                         type="submit"
                         size="small"
+                        style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                        onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
                     >
                         Generate
                     </Button>

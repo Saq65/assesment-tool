@@ -94,7 +94,7 @@ const AddEditSkillDialog = ({
             helperText={formik.touched.skillName && formik.errors.skillName}
             InputProps={{
               style: {
-                backgroundColor: "#1E293B",
+                backgroundColor: "#1D2126",
                 color: "white",
                 borderRadius: "12px",
                 padding: "10px",
@@ -106,17 +106,22 @@ const AddEditSkillDialog = ({
         <DialogActions sx={{ justifyContent: "center", gap: "10px" }}>
           <Button
             onClick={handleCloseDialog}
-            variant="primary"
             size="medium"
             padding="10px 20px"
+            style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+            onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+          
           >
             Cancel
           </Button>
           <Button
             type="submit"
-            variant="primary"
             size="medium"
             padding="10px 20px"
+            style={{ backgroundColor: "#21262c", color: "#FFFFFF" }}
+            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+            onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
           >
             {!editItem ? "Save" : "Update"}
           </Button>
