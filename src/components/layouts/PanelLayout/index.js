@@ -29,7 +29,7 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
                         
                 }}
             >
-                <div className="sticky top-0 z-20 flex w-full flex-wrap items-start gap-y-4 border-b-[0.5px] border-primary-400 bg-[#222e44] text-white px-[32px] py-[12px]">
+                <div className="sticky top-0 z-20 flex w-full flex-wrap items-start gap-y-4 border-b-[0.5px] border-primary-400 bg-[#1B1F24] text-white px-[32px] py-[12px]">
                     <div className="relative">
                         <div
                             className={`fixed left-0 top-0 z-10 h-full  transition-all duration-300 ease-in-out md:block `}
@@ -75,7 +75,7 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
 
                     </div>
 
-                    <div className='flex items-center justify-between w-full' >
+                    <div className='flex items-center justify-between w-full ' >
                         <BreadCrumbs pageTitle={pageTitle} breadcrumbsData={breadcrumbsData} />
                         <ProfileDropdown />
                     </div>
