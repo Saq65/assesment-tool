@@ -85,3 +85,11 @@ body {
 [data-mui-internal-clone-marker] {
   display: none !important;
 }
+
+.skilltitle{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

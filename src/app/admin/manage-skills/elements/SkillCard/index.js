@@ -24,7 +24,7 @@ const SkillCard = ({ id, title, levels, onEdit, onDelete, selected, showOptions 
             onClick={() => onClick(id)}
         >
             <div className="flex justify-between items-center">
-                <h2 className="text-white text-center text-[18px] font-medium flex-1 break-words">
+                <h2 className="skilltitle text-white text-center text-[18px] font-medium flex-1 break-words">
                     {title}
                 </h2>
                 {!checkboxSelection && (
