@@ -52,7 +52,7 @@ const DatatableActions = ({ setCheckboxSelection, moduleName, append }) => {
                 onClose={handleMenuClose}
                 PaperProps={{
                     sx: {
-                        backgroundColor: "#0E1626", // Dark navy background
+                        backgroundColor: "#343A40", // Dark navy background
                         color: "white",
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.25)",
                         borderRadius: "8px",
@@ -69,11 +69,12 @@ const DatatableActions = ({ setCheckboxSelection, moduleName, append }) => {
                     sx={{
                         color: "white",
                         fontSize: "1rem",
-                        // padding: "10px 16px",
                         '&:hover': {
-                            color: "#8C52FF", // Purple hover effect for Edit
+                            color: "#ffffff !important", 
+                            backgroundColor: "#343A40 !important", 
                         },
                     }}
+
                 >
                     <CheckCircleOutlineIcon fontSize="small" style={{ marginRight: 8 }} />
                     Select {moduleName + (append || "")}

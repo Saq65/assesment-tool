@@ -148,11 +148,11 @@ const TestsFilter = ({ filters, setFilters }) => {
                                                             backgroundColor: '#343A40',
                                                             border: '0.4px inset gray',
                                                             '& .MuiMenuItem-root': {
-                                                                color: 'white', 
+                                                                color: 'white',
                                                                 '&:hover': {
-                                                                  backgroundColor: 'gray ', 
+                                                                    backgroundColor: 'gray ',
                                                                 },
-                                                              },
+                                                            },
                                                         }
                                                     },
                                                     disableScrollLock: true,
@@ -175,20 +175,27 @@ const TestsFilter = ({ filters, setFilters }) => {
                                                 }}
                                             >
                                                 {getAvailableFilterOptions(filter.id).map((option) => (
-                                                  <MenuItem
-                                                  sx={{
-                                                    backgroundColor: '#343A40', 
-                                                    color: 'white',
-                                                    '&:hover': {
-                                                      backgroundColor: 'red',
-                                                    },
-                                                  }}
-                                                  key={option}
-                                                  value={option}
-                                                >
-                                                  {option}
-                                                </MenuItem>
-                                                
+                                                    <MenuItem
+                                                        sx={{
+                                                            color: "white",
+                                                            fontSize: "1rem",
+                                                            '&:hover': {
+                                                                backgroundColor: "gray !important",
+                                                            },
+                                                            '&.Mui-selected': {
+                                                                color: "#fff !important",
+                                                                backgroundColor: "#343A40 !important",
+                                                                '&:hover': {
+                                                                    backgroundColor: "gray !important",
+                                                                },
+                                                            },
+                                                        }}
+                                                        key={option}
+                                                        value={option}
+                                                    >
+                                                        {option}
+                                                    </MenuItem>
+
                                                 ))}
                                             </Select>
                                         </FormControl>

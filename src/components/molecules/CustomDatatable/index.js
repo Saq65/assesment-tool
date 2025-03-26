@@ -45,7 +45,6 @@ const CustomDatatable = ({
     const deleteId = useSelector(deleteIdSelector)
 
 
-
     useEffect(() => {
         if (!checkboxSelection) {
             setTableColumns(columns)
@@ -137,7 +136,7 @@ const CustomDatatable = ({
             sx={{
                 transition: 'all 1s ease',
                 minHeight: 500,
-                border: "none !important",
+                border: "1px solid rgba(255, 255, 255, 0.2) !important", // Light border
                 '& .MuiDataGrid-columnHeader': {
                     backgroundColor: '#343A40 !important',
                     color: '#94A3B8',

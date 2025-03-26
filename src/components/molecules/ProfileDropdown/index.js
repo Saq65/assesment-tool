@@ -38,7 +38,7 @@ const ProfileDropdown = () => {
                         cursor: "pointer",
                         width: 45,
                         height: 45,
-                        background: "#1e293b",
+                        background: "#343A40",
                         color: "#D1D5DB",
                     }}
                 >A</Avatar>
@@ -107,7 +107,7 @@ const ProfileDropdown = () => {
                 className="mt-2"
                 PaperProps={{
                     sx: {
-                        backgroundColor: "#1e293b", // Dark navy background
+                        backgroundColor: "#343A40", // Dark navy background
                         color: "white",
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.25)",
                         borderRadius: "8px",
@@ -118,22 +118,21 @@ const ProfileDropdown = () => {
             >
                 <MenuItem
                     onClick={handleLogout}
-                    className="px-5 py-2 text-sm"
                     sx={{
                         "&:hover": {
-                            backgroundColor: "rgba(125, 211, 252, 0.1) !important", // Add hover effect
-
+                            backgroundColor: "rgba(125, 211, 252, 0.1) !important",
                         },
-                        background: "transparent"
+                        background: "#343A40",
+                        minWidth: "auto", // Prevents MUI from setting a wide default width
+                        padding: "4px 10px", // Adjust padding to make it smaller
+                        maxWidth: "120px", // You can further tweak this
                     }}
-
                 >
-                    <ListItemIcon>
+                    <ListItemIcon sx={{ minWidth: "30px" }}> {/* Adjust icon size */}
                         <Logout fontSize="small" />
                     </ListItemIcon>
-                    <span className="text-white">Logout</span>
+                    <span className="text-white text-sm">Logout</span>
                 </MenuItem>
-
 
             </Menu>
         </div>
