@@ -61,6 +61,7 @@ const FeedbacksDatatable = ({ handleOpenDialogDel, refetchData, deleteMutation, 
             deleteMutation={deleteMutation}
             setRefetchData={setRefetchData}
             moduleName={moduleName}
+            
         />
     )
 }

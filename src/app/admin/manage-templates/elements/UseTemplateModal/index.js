@@ -178,9 +178,9 @@ const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest })
 
                                 <div
                                     key={index}
-                                    className=" flex items-start flex-1"
+                                    className=" flex flex-1 justify-between items-center w-full"
                                 >
-                                    <span className=' mt-7 mr-2'>{index + 1}.</span>
+                                    <span className=' mr-2 '>{index + 1}.</span>
                                     {/* Name Field */}
                                     <div className="flex-1 pr-2">
                                         <CustomInput
@@ -217,7 +217,7 @@ const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest })
 
                                     {/* Delete Button */}
                                     {formik.values.users.length > 1 && (
-                                        <div className="flex justify-end mt-5">
+                                        <div className="flex justify-center items-center">
                                             <IconButton
                                                 onClick={() => removeUser(index)}
                                                 aria-label="Delete User"

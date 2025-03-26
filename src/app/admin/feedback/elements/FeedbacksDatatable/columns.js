@@ -44,9 +44,19 @@ export const columns = ({ handleOpenDialogDel }) => ([
         sortable: true,
         filterable: true,
         selectable: false,
-        renderCell: (params) => {
-            return <span>{params?.value}</span>
-        },
+        renderCell: (params) => (
+            <div
+                style={{
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: "100%", // Ensures it respects column width
+                }}
+                title={params.value} // Shows full text on hover
+            >
+                {params.value}
+            </div>
+        )
     },
 
     {

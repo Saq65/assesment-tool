@@ -111,6 +111,7 @@ const TestsFilter = ({ filters, setFilters }) => {
                         if (!isSelectOpen && !event.target.closest('.MuiPopover-root')) {
                             handleClose();
                         }
+
                     }}
                 >
                     <div className="absolute right-0 mt-2 w-[620px] p-4  bg-[#343A40] rounded-2xl shadow-lg z-50">
@@ -121,7 +122,7 @@ const TestsFilter = ({ filters, setFilters }) => {
                                 setIsOpen(false)
                                 setFilters([{ id: 1, filterType: "Test Status", statusInput: [], timePeriodValue: "", jobPositionValue: [] }])
                             }} style={{ color: '#fff', paddingInline: "10px" }} size="small">
-                                    <GridCloseIcon />
+                                <GridCloseIcon />
                             </IconButton>
 
                         </header>
@@ -142,7 +143,18 @@ const TestsFilter = ({ filters, setFilters }) => {
                                                 onOpen={handleSelectOpen}
                                                 onClose={handleSelectClose}
                                                 MenuProps={{
-                                                    PaperProps: {},
+                                                    PaperProps: {
+                                                        sx: {
+                                                            backgroundColor: '#343A40',
+                                                            border: '0.4px inset gray',
+                                                            '& .MuiMenuItem-root': {
+                                                                color: 'white', 
+                                                                '&:hover': {
+                                                                  backgroundColor: 'gray ', 
+                                                                },
+                                                              },
+                                                        }
+                                                    },
                                                     disableScrollLock: true,
                                                 }}
                                                 disableRipple
@@ -163,9 +175,20 @@ const TestsFilter = ({ filters, setFilters }) => {
                                                 }}
                                             >
                                                 {getAvailableFilterOptions(filter.id).map((option) => (
-                                                    <MenuItem key={option} value={option}>
-                                                        {option}
-                                                    </MenuItem>
+                                                  <MenuItem
+                                                  sx={{
+                                                    backgroundColor: '#343A40', 
+                                                    color: 'white',
+                                                    '&:hover': {
+                                                      backgroundColor: 'red',
+                                                    },
+                                                  }}
+                                                  key={option}
+                                                  value={option}
+                                                >
+                                                  {option}
+                                                </MenuItem>
+                                                
                                                 ))}
                                             </Select>
                                         </FormControl>
