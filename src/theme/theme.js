@@ -590,16 +590,17 @@ export const DarkSpacesTheme = createTheme({
     MuiCheckbox: {
       styleOverrides: {
         root: {
-          color: "#374151", // Default/unchecked color
+          color: "#374151", 
           "&.Mui-checked": {
-            color: "#7DD3FC", // Checked color
+            color: "#7DD3FC", 
+            backgroundColor:'#272C33'
           },
           "&:hover": {
-            color: "#7DD3FC", // Hover effect
-            backgroundColor: "rgba(125, 211, 252, 0.1)",
+            color: "#7DD3FC", 
+            backgroundColor: "#272C33",
           },
           "&.Mui-focusVisible": {
-            outline: "2px solid #7DD3FC", // Focus ring
+            outline: "2px solid #fff", 
           },
         },
       },
@@ -859,7 +860,7 @@ export const DarkSpacesTheme = createTheme({
           backgroundImage: "none",
           padding: 0,
           // background: "#232a2e",
-          background: "#0f172a",
+          background: "#",
           border: "none",
           boxShadow: "none",
         },

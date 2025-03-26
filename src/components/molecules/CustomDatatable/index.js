@@ -163,7 +163,6 @@ const CustomDatatable = ({
                     flexGrow: 1,
                 },
 
-
                 '& .MuiDataGrid-cell': {
                     display: 'flex',
                     justifyContent: 'center',
@@ -204,11 +203,12 @@ const CustomDatatable = ({
                     borderColor: 'none', // Remove border
                 },
                 '& .MuiDataGrid-row.Mui-selected': {
-                    background: "#0F172A"
+                    background: "#343A40"
                 },
                 '& .MuiDataGrid-row.Mui-selected:hover': {
-                    background: "#0F172A"
+                    background: "#343A40"
                 },
+
 
             }}
             slots={{

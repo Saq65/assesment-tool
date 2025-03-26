@@ -281,13 +281,13 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                         '&.MuiButtonBase-root:hover': {
                                                             backgroundColor: 'grau',
                                                         },
-                                                        '& .MuiSvgIcon-root': {
-                                                            fontSize: 24,
-                                                            color: 'gray',
-                                                            '&:hover': {
-                                                                color: 'yellow',
-                                                            }
-                                                        },
+                                                        // '& .MuiSvgIcon-root': {
+                                                        //     fontSize: 24,
+                                                        //     color: 'gray',
+                                                        //     '&:hover': {
+                                                        //         color: 'yellow',
+                                                        //     }
+                                                        // },
                                                     }}
                                                     value={getSkillId(skill)}
                                                     defaultChecked={Boolean(selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill)))}
