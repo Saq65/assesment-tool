@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Dialog, Checkbox, RadioGroup, Radio, FormControlLabel, Grid, FormControl, FormHelperText } from '@mui/material';
+import { Dialog, Checkbox, RadioGroup, Radio, FormControlLabel, Grid, FormControl, FormHelperText, DialogTitle, IconButton } from '@mui/material';
 import { useFormik } from 'formik';
 import CustomInput from '@/components/atoms/TextInput';
 import { experienceLevelsSelector, skillsSelector } from '@/store/features/questions/selectors';
@@ -13,6 +13,7 @@ import Button from '@/components/atoms/Button';
 import { compareArrays, compareValues, getSkillId, getSkillName } from '@/utils';
 import { editItemSelector } from '@/store/features/common/selectors';
 import { editTemplateValidationSchema } from '@/validations/edit-template-schema';
+import { GridCloseIcon } from '@mui/x-data-grid';
 
 
 const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }) => {
@@ -187,13 +188,23 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
     console.log(selectedProgramSkills, "selectedProgramSkills>>>");
 
 
-
     return (
-        <Dialog open={openDialog} onClose={handleCloseDialog} sx={{ '& .MuiDialog-paper': { backgroundColor: '#1E293B', width: '550px', overflow: "hidden" } }}>
+        <Dialog open={openDialog} onClose={handleCloseDialog} sx={{
+            '& .MuiDialog-paper': { backgroundColor: '#272C33', width: '550px', overflow: "hidden" },
+            '& .MuiBackdrop-root': {
+                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                backdropFilter: 'blur(10px)',
+            }
+        }}>
+            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 className='text-[18px] leading-6   font-bold '>Edit Template</h3>
+                <IconButton onClick={handleCloseDialog} sx={{ color: "white" }}>
+                    <GridCloseIcon />
+                </IconButton>
+            </DialogTitle>
 
-            <h3 className='text-[18px] leading-6 px-6  font-bold py-5'>Edit Template</h3>
             <form onSubmit={formik.handleSubmit} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div className='max-h-[calc(100vh-200px)] px-6 overflow-y-auto'
+                <div className='max-h-[calc(100vh-240px)] px-6 overflow-y-auto'
                 //  sx={{ paddinin: '10px !important', flexGrow: 1, overflowY: 'auto', maxHeight: 'calc(100vh - 160px)' }}
                 >
                     <Grid container spacing={2}>
@@ -253,7 +264,31 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                     name={getSkillName(skill.name)}
                                                     checked={selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill))}
                                                     onChange={handleCheckboxChange}
-                                                    sx={{ color: 'white' }}
+                                                    disableRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    sx={{
+                                                        color: 'gray',
+                                                        '&:hover': {
+                                                            color: 'gray',
+                                                            // backgroundColor: 'transparent'
+                                                        },
+                                                        '&.Mui-checked': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.Mui-checked:hover': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.MuiButtonBase-root:hover': {
+                                                            backgroundColor: 'grau',
+                                                        },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
+                                                    }}
                                                     value={getSkillId(skill)}
                                                     defaultChecked={Boolean(selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill)))}
                                                 />
@@ -268,6 +303,31 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                     name={skill.skillId}
                                                     value={selectedSkills?.find((item) => item?.skillId == getSkillId(skill))?.levelId}
                                                     row
+                                                    disableRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    sx={{
+                                                        color: 'gray',
+                                                        '&:hover': {
+                                                            color: 'gray',
+                                                            // backgroundColor: 'transparent'
+                                                        },
+                                                        '&.Mui-checked': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.Mui-checked:hover': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.MuiButtonBase-root:hover': {
+                                                            backgroundColor: 'grau',
+                                                        },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
+                                                    }}
                                                 >
                                                     {experienceLevels?.map((exp) => (
                                                         <FormControlLabel
@@ -306,7 +366,31 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                     name={getSkillName(skill.name)}
                                                     checked={selectedProgramSkills?.find((item) => getSkillId(item) == getSkillId(skill))}
                                                     onChange={handleCheckboxChangeProgramSkills}
-                                                    sx={{ color: 'white' }}
+                                                    disableRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    sx={{
+                                                        color: 'gray',
+                                                        '&:hover': {
+                                                            color: 'gray',
+                                                            // backgroundColor: 'transparent'
+                                                        },
+                                                        '&.Mui-checked': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.Mui-checked:hover': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.MuiButtonBase-root:hover': {
+                                                            backgroundColor: 'grau',
+                                                        },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
+                                                    }}
                                                     value={getSkillId(skill)}
                                                 />
                                             }
@@ -320,6 +404,31 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                     name={skill.skillId}
                                                     value={selectedProgramSkills?.find((item) => item?.skillId == getSkillId(skill))?.levelId}
                                                     row
+                                                    disableRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    sx={{
+                                                        color: 'gray',
+                                                        '&:hover': {
+                                                            color: 'gray',
+                                                            // backgroundColor: 'transparent'
+                                                        },
+                                                        '&.Mui-checked': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.Mui-checked:hover': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.MuiButtonBase-root:hover': {
+                                                            backgroundColor: 'grau',
+                                                        },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
+                                                    }}
                                                 >
                                                     {experienceLevels?.map((exp) => (
                                                         <FormControlLabel
@@ -362,13 +471,18 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                         </Grid>
                     </Grid>
                 </div>
-                <div className='sticky bottom-0 bg-[#1E293B] z-10 flex justify-end px-6 gap-x-2 py-5'>
-                    <Button onClick={handleCloseDialog} variant='secondary' size="small">
+                <div className='sticky bottom-0 bg-[#272C33 ] z-10 flex justify-end px-6 gap-x-2 py-5'>
+                    <Button onClick={handleCloseDialog} variant='secondary'
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                        size="small">
                         Cancel
                     </Button>
                     <Button
                         type="submit"
                         size="small"
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                     >
                         Generate
                     </Button>

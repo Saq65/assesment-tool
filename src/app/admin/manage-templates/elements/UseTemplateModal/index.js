@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { Dialog, IconButton, FormHelperText, Fab } from '@mui/material';
+import { Dialog, IconButton, FormHelperText, Fab, DialogTitle } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup'; // Yup validation
 import CustomInput from '@/components/atoms/TextInput';
@@ -11,6 +11,7 @@ import CustomSelect from '@/components/atoms/CustomSelect';
 import { useSelector } from 'react-redux';
 import { allTemplatesSelector, templateIdSelector } from '@/store/features/templates/selectors';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { GridCloseIcon } from '@mui/x-data-grid';
 const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest }) => {
 
     const allTemplates = useSelector(allTemplatesSelector);
@@ -119,17 +120,27 @@ const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest })
             onClose={handleCloseDialog}
             sx={{
                 '& .MuiDialog-paper': {
-                    backgroundColor: '#1E293B',
+                    backgroundColor: '#272C33',
                     height: "100%",
                     minWidth: '800px',
                     maxWidth: '100%',
                     display: 'flex',
                     flexDirection: 'column',
+                    overflow:'hidden'
                 },
+                 '& .MuiBackdrop-root': {
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    backdropFilter: 'blur(10px)',
+                }
             }}
         >
+            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 className="text-[18px] leading-6 px-6 font-bold my-6">Generate tests from saved templates</h3>
+                <IconButton onClick={handleCloseDialog} sx={{ color: 'white' }}>
+                    <GridCloseIcon />
+                </IconButton>
+            </DialogTitle>
             {/* Title */}
-            <h3 className="text-[18px] leading-6 px-6 font-bold my-6">Generate tests from saved templates</h3>
 
             <form
                 onSubmit={formik.handleSubmit}
@@ -249,13 +260,19 @@ const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest })
                 {/* Buttons - Fixed at Bottom */}
                 {/* <DialogActions> */}
                 <div
-                    className="sticky bottom-0 bg-[#1E293B] z-10 flex justify-end px-6 gap-x-2 py-5"
+                    className="sticky bottom-0 bg-[#272C33] z-10 flex justify-end px-6 gap-x-2 py-5"
                 >
                     {/* <div className=' flex justify-end gap-x-2'> */}
-                    <Button onClick={handleCloseDialog} variant="secondary" size="small">
+                    <Button onClick={handleCloseDialog} variant="secondary" size="small"
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    >
                         Cancel
                     </Button>
-                    <Button type="submit" size="small">
+                    <Button type="submit" size="small"
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    >
                         Send Test
                     </Button>
                     {/* </div> */}

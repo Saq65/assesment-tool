@@ -257,7 +257,8 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                                                                 color: 'yellow',
                                                             }
                                                         },
-                                                    }} value={getSkillId(skill)}
+                                                    }}
+                                                     value={getSkillId(skill)}
                                                 />
                                             }
                                             label={getSkillName(skill)}
@@ -434,18 +435,16 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                 </div>
                 <div className='sticky bottom-0 z-10 flex justify-end px-6 gap-x-2 py-5'>
                     <Button onClick={handleCloseDialog}
-                        style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
                         onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
-                        onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
                         size="small">
                         Cancel
                     </Button>
                     <Button
                         type="submit"
                         size="small"
-                        style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
                         onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
-                        onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
                     >
                         Generate
                     </Button>

@@ -71,13 +71,27 @@ const TemplateActions = ({ params, handleOpenDialogDel, handleOpenUseTemplateDia
         <div className="flex items-center h-full gap-x-3">
             <Button variant="" size="small" onClick={(e) => {
                 handleViewQuestions()
-            }}>View template</Button>
+            }}
+                style={{
+                    backgroundColor: "#343A40", color: "#FFFFFF",
+                    boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+                }}
+                onMouseEnter={(e) => (e.target.style.backgroundColor = "#272C33")}
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#343A40")}
+            >View template</Button>
 
-            <Button size="small" onClick={(e) => {
-                e.stopPropagation()
-                handleOpenUseTemplateDialog();
-                dispatch(setTemplateId(params?.id))
-            }}>Use template</Button>
+            <Button
+                style={{
+                    backgroundColor: "#343A40", color: "#FFFFFF",
+                    boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px",
+                }}
+                onMouseEnter={(e) => (e.target.style.backgroundColor = "#272C33")}
+                onMouseOut={(e) => (e.target.style.backgroundColor = "#343A40")}
+                size="small" onClick={(e) => {
+                    e.stopPropagation()
+                    handleOpenUseTemplateDialog();
+                    dispatch(setTemplateId(params?.id))
+                }}>Use template</Button>
             <IconButton
                 aria-controls="skill-card-menu"
                 aria-haspopup="true"

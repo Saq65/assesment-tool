@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, IconButton } from '@mui/material';
+import { GridCloseIcon } from '@mui/x-data-grid';
 
 const ConfirmDelete = ({
     open,
@@ -27,7 +28,12 @@ const ConfirmDelete = ({
                 },
             }}
         >
-            <DialogTitle>{title}</DialogTitle>
+            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                {title}
+                <IconButton onClick={onClose} sx={{ color: "white" }}>
+                    <GridCloseIcon />
+                </IconButton>
+            </DialogTitle>
             <DialogContent>{message}</DialogContent>
             <DialogActions>
                 <Button onClick={onClose}
@@ -37,10 +43,10 @@ const ConfirmDelete = ({
                 >
                     {cancelButtonText}
                 </Button>
-                <Button onClick={handleConfirm} 
-                 style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
-                 onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
-                 onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                <Button onClick={handleConfirm}
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
                 >
                     {deleteButtonText}
                 </Button>
