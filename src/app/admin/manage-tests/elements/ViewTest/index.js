@@ -82,7 +82,7 @@ const ViewTest = () => {
 
 
     return (
-        <div className=" mx-auto p-8 bg-primary-200 rounded-lg shadow-lg mt-4 space-y-8">
+        <div className=" mx-auto p-8 bg-[#1D2126] rounded-lg shadow-sm mt-4 space-y-8">
             {/* Candidate Details */}
             <div className="flex justify-end"><TestStatus status={test?.status} /></div>
             <SectionBox title="Candidate details">
@@ -144,13 +144,23 @@ const ViewTest = () => {
                 >
                     {isTestSent || test?.isTestSent ? "Resend Test" : "Send Test"}
                 </Button>}
-                <Button variant="primary" onClick={handleViewQuestions}>
+                <Button variant="primary"
+                    onClick={handleViewQuestions}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+
+                >
                     View Test Questions
                 </Button>
                 {["finished", "disQualified"].includes(test?.status) && <Button
                     onClick={() => handleViewResult(test?.candidateName)}
                     // disabled={isTestSent || test?.isTestSent}
                     variant="primary"
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+
                 >
                     {"View Results"}
                 </Button>}
@@ -160,7 +170,7 @@ const ViewTest = () => {
 };
 
 const SectionBox = ({ title, children }) => (
-    <div className="bg-gray-900 p-6 rounded-md shadow-md">
+    <div className="bg-newCodes-foreground p-6 rounded-md shadow-md">
         <h2 className="text-xl font-semibold text-white mb-4">{title}</h2>
         <div className="space-y-4">{children}</div>
     </div>
@@ -174,7 +184,7 @@ const DetailRow = ({ label, value, color, className }) => {
     return (
         <div className="flex flex-col gap-y-1">
             <p className="text-gray-300 font-semibold">{label}:</p>
-            <div className="flex justify-between gap-x-2 items-center bg-gray-800 p-4 rounded-md">
+            <div className="flex justify-between gap-x-2 items-center bg-[#1D2126] p-4 rounded-md">
 
                 <Tooltip title={value} arrow placement="top">
                     <p
@@ -191,7 +201,7 @@ const DetailRow = ({ label, value, color, className }) => {
 
 
 const StatusRow = ({ label, status }) => (
-    <div className="flex justify-between items-center bg-gray-800 p-4 rounded-md">
+    <div className="flex justify-between items-center bg-[#1D2126] p-4 rounded-md">
         <p className="text-gray-300 font-semibold">{label}:</p>
         <p className={status ? "text-green-500" : "text-red-500"}>
             {status ? "Yes" : "No"}

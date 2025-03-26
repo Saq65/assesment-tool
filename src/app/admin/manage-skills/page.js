@@ -21,7 +21,6 @@ import { getSkillId } from "@/utils";
 const ManageSkills = () => {
 
     const { showSuccess, showError } = useSnackbar();
-
     const [updateSkill] = useUpdateSkillMutation();
     const [createSkill] = useCreateSkillMutation();
     const [deleteSkill] = useDeleteSkillMutation();
@@ -179,8 +178,8 @@ const ManageSkills = () => {
 
                 {skills.length === 0 ? (
                     <div className="text-center text-gray-500">
-                        <h3 className="text-lg font-semibold">No Skills Available</h3>
-                        <p className="mt-2">Please add some skills to get started.</p>
+                        {/* <h3 className="text-lg font-semibold">No Skills Available</h3>
+                        <p className="mt-2">Please add some skills to get started.</p> */}
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

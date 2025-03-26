@@ -110,6 +110,90 @@ const CustomDatatable = ({
 
     console.log(rowSelectionModel, "role selection models")
 
+    const newLocal = <div style={{ maxHeight: 600, minHeight: 500, width: "100%", overflowY: "scroll", paddingRight: "10px" ,backgroundColor:'#272C33'}}>
+        <DataGrid
+            resizeThrottleMs={0}
+            rows={rows}
+            columns={tableColumns}
+            pageSize={pageSize}
+            checkboxSelection={checkboxSelection}
+            // onRowSelectionModelChange={(props) => {
+            //     // console.log(props, "props>>>")
+            //     // setRowSelectionModel((prev) => ([...prev, ...props]))
+            // }}
+            onRowSelectionModelChange={handleRowSelectionChange}
+            rowSelectionModel={checkboxSelection ? rowSelectionModel : []}
+            // rowSelectionModel={rowSelectionModel}
+            disableSelectionOnClick={true}
+            // disableRowSelectionOnClick={true}
+            // rowSelection={false}
+            showCellVerticalBorder={false}
+            showColumnVerticalBorder={false}
+            hideFooterPagination
+            hideFooter
+            loading={pagination?.loading}
+            onRowClick={!checkboxSelection && onRowClick}
+            sx={{
+                transition: 'all 1s ease',
+                minHeight: 500,
+                border: "none !important",
+                '& .MuiDataGrid-columnHeader': {
+                    backgroundColor: '#343A40 !important', // Set your desired background color here
+                    color: '#94A3B8', // Optional: change text color of the header
+                    font: "14px",
+                    fontWeight: 500,
+                    lineHeight: 20
+                    // border: 'none !important'
+                },
+                '& .MuiDataGrid-overlay': {
+                    background: 'none !important', // Set your desired background color here
+                    // border: 'none !important'
+                },
+                '& .MuiDataGrid-filler': {
+                    backgroundColor: '#1e293b !important', // Set your desired background color here
+                    color: '#ffffff', // Optional: change text color of the header
+                    // border: 'none !important'
+                },
+                '& .MuiDataGrid-row:hover': {
+                    backgroundColor: '#343A40', // Row hover background color
+                    cursor: 'pointer', // Change cursor to pointer on hover
+                },
+                '& .MuiDataGrid-columnSeparator': {
+                    visibility: 'hidden', // Hide column borders
+                },
+                '& .MuiDataGrid-root': {
+                    border: 'none !important', // Remove the outer border of the DataGrid
+                    boxShadow: 'none !important', // Remove any box-shadow if present
+                },
+                '& .MuiDataGrid-cell:focus': {
+                    outline: 'none', // Remove focus outline
+                    borderColor: 'none', // Remove border
+                },
+                '& .MuiDataGrid-cell:focus-within': {
+                    outline: 'none', // Remove focus outline
+                    borderColor: 'none', // Remove border
+                },
+
+                '& .MuiDataGrid-columnHeader:focus': {
+                    outline: 'none', // Remove focus outline
+                    borderColor: 'none', // Remove border
+                },
+                '& .MuiDataGrid-row.Mui-selected': {
+                    background: "#0F172A"
+                },
+                '& .MuiDataGrid-row.Mui-selected:hover': {
+                    background: "#0F172A"
+                },
+            }}
+            slots={{
+                noRowsOverlay: () => (
+                    <div className="w-full h-full flex justify-center items-center bg-[#272C33]">
+                        <p className="text-white text-md">{!pagination?.loading && "No records"}</p>
+                    </div>
+                ),
+            }} />
+
+    </div>;
     return (
         <>
             <ConfirmDelete
@@ -125,7 +209,7 @@ const CustomDatatable = ({
                         <Typography variant="h3" gutterBottom>
                             {title}
                         </Typography>
-                        <span className="bg-[#93c5fd1a] font-semibold text-[14px] leading-[18px] flex items-center rounded-[11px] text-[#93C5FD] h-[28px] px-[10px]">
+                        <span className="bg-[#93c5fd1a] font-semibold text-[14px] leading-[18px] flex items-center rounded-[11px] text-[#ffffff] h-[28px] px-[10px]">
                             {pagination?.total}
                         </span>
                     </div>
@@ -153,94 +237,7 @@ const CustomDatatable = ({
                         <RowSelection handleOpenDialog={handleOpenDialog} checkboxSelection={checkboxSelection} setCheckboxSelection={setCheckboxSelection} rowSelectionModel={rowSelectionModel} handleRemoveCheckboxSelection={handleRemoveCheckboxSelection} />
 
 
-                        <div style={{ maxHeight: 600, minHeight: 500, width: "100%", overflowY: "scroll", paddingRight: "10px" }}>
-                            <DataGrid
-                                resizeThrottleMs={0}
-                                rows={rows}
-                                columns={tableColumns}
-                                pageSize={pageSize}
-                                checkboxSelection={checkboxSelection}
-                                // onRowSelectionModelChange={(props) => {
-                                //     // console.log(props, "props>>>")
-                                //     // setRowSelectionModel((prev) => ([...prev, ...props]))
-                                // }}
-                                onRowSelectionModelChange={handleRowSelectionChange}
-                                rowSelectionModel={checkboxSelection ? rowSelectionModel : []}
-                                // rowSelectionModel={rowSelectionModel}
-                                disableSelectionOnClick={true}
-                                // disableRowSelectionOnClick={true}
-                                // rowSelection={false}
-                                showCellVerticalBorder={false}
-                                showColumnVerticalBorder={false}
-                                hideFooterPagination
-                                hideFooter
-                                loading={pagination?.loading}
-                                onRowClick={!checkboxSelection && onRowClick}
-                                sx={{
-                                    transition: 'all 1s ease',
-                                    minHeight: 500,
-                                    border: "none !important",
-                                    '& .MuiDataGrid-columnHeader': {
-                                        backgroundColor: '#1e293b !important', // Set your desired background color here
-                                        color: '#94A3B8', // Optional: change text color of the header
-                                        font: "14px",
-                                        fontWeight: 500,
-                                        lineHeight: 20
-                                        // border: 'none !important'
-                                    },
-                                    '& .MuiDataGrid-overlay': {
-                                        background: 'none !important', // Set your desired background color here
-
-                                        // border: 'none !important'
-                                    },
-                                    '& .MuiDataGrid-filler': {
-                                        backgroundColor: '#1e293b !important', // Set your desired background color here
-                                        color: '#ffffff', // Optional: change text color of the header
-                                        // border: 'none !important'
-                                    },
-                                    '& .MuiDataGrid-row:hover': {
-                                        backgroundColor: '#0F172A', // Row hover background color
-                                        cursor: 'pointer', // Change cursor to pointer on hover
-                                    },
-                                    '& .MuiDataGrid-columnSeparator': {
-                                        visibility: 'hidden', // Hide column borders
-                                    },
-                                    '& .MuiDataGrid-root': {
-                                        border: 'none !important', // Remove the outer border of the DataGrid
-                                        boxShadow: 'none !important', // Remove any box-shadow if present
-                                    },
-                                    '& .MuiDataGrid-cell:focus': {
-                                        outline: 'none', // Remove focus outline
-                                        borderColor: 'none', // Remove border
-                                    },
-                                    '& .MuiDataGrid-cell:focus-within': {
-                                        outline: 'none', // Remove focus outline
-                                        borderColor: 'none', // Remove border
-                                    },
-
-                                    '& .MuiDataGrid-columnHeader:focus': {
-                                        outline: 'none', // Remove focus outline
-                                        borderColor: 'none', // Remove border
-                                    },
-                                    '& .MuiDataGrid-row.Mui-selected': {
-                                        background: "#0F172A"
-                                    },
-                                    '& .MuiDataGrid-row.Mui-selected:hover': {
-                                        background: "#0F172A"
-                                    },
-
-
-                                }}
-                                slots={{
-                                    noRowsOverlay: () => (
-                                        <div className="w-full h-full flex justify-center items-center">
-                                            <p className="text-white text-md">{!pagination?.loading && "No records"}</p>
-                                        </div>
-                                    ),
-                                }}
-                            />
-
-                        </div>
+                        {newLocal}
                     </div>
                     {/* Custom Pagination */}
                     <CustomPagination

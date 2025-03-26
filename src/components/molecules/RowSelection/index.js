@@ -12,12 +12,12 @@ const RowSelection = ({ checkboxSelection, setCheckboxSelection, rowSelectionMod
 
     return (
         <div
-            className={`flex items-center px-5 py-3 justify-between mb-3 bg-[#334155] rounded-lg transition-all duration-300 ease-in-out ${checkboxSelection
-                ? 'opacity-100 h-[64px] visibility-visible' // When checkbox is selected
+            className={`flex items-center px-5 py-3 justify-between mb-3 bg-newCodes-foreground rounded-lg transition-all duration-300 ease-in-out ${checkboxSelection
+                ? 'opacity-100 h-[64px] visibility-visible ' // When checkbox is selected
                 : 'opacity-0 h-0 visibility-hidden overflow-hidden !p-0' // When not selected
                 }`}
         >
-            <div className="text-blue-300">
+            <div className="text-white">
                 {rowSelectionModel?.length} records selected
             </div>
             <div>

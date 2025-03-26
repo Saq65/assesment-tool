@@ -42,13 +42,31 @@ const CustomSelect = ({
         autoFocus={autoFocus}
         MenuProps={{
           PaperProps: {},
-          disableScrollLock: true, // Prevents scroll lock when dropdown is open
+          disableScrollLock: true, 
         }}
+        disableRipple 
+   
+        sx={{
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'gray', 
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'gray !important', 
+          },
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'gray !important', 
+          },
+          '& .MuiSelect-select:focus': {
+            backgroundColor: 'transparent', 
+          },
+        }}
+
       >
         {options.map((option) => (
           <MenuItem
             value={option?.id || option?.skillId || option?.levelId}
             key={option?.id}
+
           >
             {option?.name ||
               option?.title ||

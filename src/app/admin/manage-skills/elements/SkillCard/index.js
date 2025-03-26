@@ -28,21 +28,49 @@ const SkillCard = ({ id, title, levels, onEdit, onDelete, selected, showOptions 
                     {title}
                 </h2>
                 {!checkboxSelection && (
-                    <IconButton
-                        aria-controls="skill-card-menu"
-                        aria-haspopup="true"
-                        onClick={handleMenuOpen}
-                        size="small"
-                    >
-                        <MoreVertIcon style={{ color: "white" }} />
-                    </IconButton>
+                    <>
+                        <IconButton
+                            aria-controls="skill-card-menu"
+                            aria-haspopup="true"
+                            onClick={handleMenuOpen}
+                            size="small"
+                        >
+                            <MoreVertIcon style={{ color: "white" }} />
+                        </IconButton>
+                    </>
+
                 )}
                 {checkboxSelection && (
                     <FormControlLabel
                         control={
+
                             <Checkbox
                                 checked={selected}
-                                sx={{ color: 'white' }}
+                                disableRipple
+                                TouchRippleProps={{ style: { color: 'gray' } }}
+                                sx={{
+                                    color: 'gray',
+                                    '&:hover': {
+                                        color: 'gray',
+                                        // backgroundColor: 'transparent'
+                                    },
+                                    '&.Mui-checked': {
+                                        color: 'gray',
+                                    },
+                                    '&.Mui-checked:hover': {
+                                        color: 'gray',
+                                    },
+                                    '&.MuiButtonBase-root:hover': {
+                                        backgroundColor: 'grau', 
+                                    },
+                                    '& .MuiSvgIcon-root': {
+                                        fontSize: 24,
+                                        color: 'gray', 
+                                        '&:hover': {
+                                            color: 'yellow', 
+                                        }
+                                    },
+                                } }
                             />
                         }
                     />

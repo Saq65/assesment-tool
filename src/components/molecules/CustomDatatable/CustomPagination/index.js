@@ -21,7 +21,7 @@ const CustomPagination = ({ handlePageChange, pagination }) => {
                 // variant="outlined" // Optional: You can change the variant to "text"
                 sx={{
                     '.MuiPaginationItem-root:hover': {
-                        backgroundColor: '#0284C7', // Hover color
+                        backgroundColor: '#343A40', // Hover color
                     },
                 }}
             />

@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { colors } from '@mui/material';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -37,8 +38,10 @@ const JobProfileChart = ({ data = [] }) => {
                     endingShape: 'rounded',
                     dataLabels: {
                         position: 'top', // Position data labels at the top of the bars
+                        
                     },
                     columnWidth: '18px',
+                    
                 },
             },
             dataLabels: {
@@ -84,6 +87,7 @@ const JobProfileChart = ({ data = [] }) => {
                     
                 },
             },
+            colors:['#1F51FF'],
             fill: {
                 opacity: 5,
             },
@@ -119,7 +123,7 @@ const JobProfileChart = ({ data = [] }) => {
                 Job Opening Performance vs. Benchmark
             </h2>
             <div className='mt-4 w-100 items-center'>
-                <Chart options={chartData.options} series={chartData.series} type="bar" height={400} />
+                <Chart options={chartData.options} series={chartData.series} type="bar"  height={400} />
             </div>
         </div>
     );

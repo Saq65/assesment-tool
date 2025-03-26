@@ -6,7 +6,22 @@ const FilterOperator = () => {
 
     return (
         <FormControl sx={{ minWidth: 150 }} size="small" fullWidth>
-            <Select value={options[0]} disabled>
+            <Select value={options[0]} disabled disableRipple
+                autoFocus={false}
+                sx={{
+                    '& .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'gray',
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'gray !important',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'gray !important',
+                    },
+                    '& .MuiSelect-select:focus': {
+                        backgroundColor: 'transparent',
+                    },
+                }}>
                 {options.map((option) => (
                     <MenuItem key={option} value={option}>
                         {option}

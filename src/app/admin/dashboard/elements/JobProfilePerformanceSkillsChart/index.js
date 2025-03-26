@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import CustomSelect from '@/components/atoms/CustomSelect';
+import { colors } from '@mui/material';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -89,6 +90,7 @@ const JobProfilePerformanceSkillsChart = ({ data = [] }) => {
                     },
                 },
             },
+            colors:['#1F51FF'],
             fill: {
                 opacity: 1,
             },

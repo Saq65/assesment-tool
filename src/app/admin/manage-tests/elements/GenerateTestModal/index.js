@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Dialog, Checkbox, RadioGroup, Radio, FormControlLabel, Grid, FormControl, FormHelperText } from '@mui/material';
+import { Dialog, Checkbox, RadioGroup, Radio, FormControlLabel, Grid, FormControl, FormHelperText, DialogTitle, IconButton } from '@mui/material';
 import { useFormik } from 'formik';
 import CustomInput from '@/components/atoms/TextInput';
 import { experienceLevelsSelector, skillsSelector } from '@/store/features/questions/selectors';
@@ -10,6 +10,7 @@ import * as Yup from "yup"; // Yup validation
 import Button from '@/components/atoms/Button';
 import { getSkillId, getSkillName } from '@/utils';
 import { generateTestValidationSchema } from '@/validations/generate-test-schema';
+import { GridCloseIcon } from '@mui/x-data-grid';
 
 
 const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }) => {
@@ -131,10 +132,22 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
 
 
     return (
-        <Dialog open={openDialog} onClose={handleCloseDialog} sx={{ '& .MuiDialog-paper': { backgroundColor: '#272C33', minWidth: '400px', overflow: "hidden" } }}>
-            <h3 className='text-[18px] leading-6 px-6  font-bold mt-5'>Generate Test</h3>
+        <Dialog open={openDialog} onClose={handleCloseDialog}
+            sx={{
+                '& .MuiDialog-paper': { backgroundColor: '#272C33', minWidth: '400px', overflow: "hidden" }, '& .MuiBackdrop-root': {
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                    backdropFilter: 'blur(10px)',
+                }
+            }} >
+            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 className='text-[18px] font-bold'>Generate Test</h3>
+                <IconButton onClick={handleCloseDialog} sx={{ color: 'white' }}>
+                    <GridCloseIcon />
+                </IconButton>
+            </DialogTitle>
+
             <form onSubmit={formik.handleSubmit} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <div className='max-h-[calc(100vh-200px)] px-6 overflow-y-auto'
+                <div className='max-h-[calc(100vh-240px)] px-6 overflow-y-auto'
                 >
                     <Grid container spacing={2}>
                         {/* Candidate's Name */}
@@ -212,8 +225,6 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                             }}>
                                 <legend style={{ color: formik?.errors?.skills && formik?.touched?.skills ? "#FF1943" : "#ffffff" }} className=' !text-[#FFFFFFB3] !text-[12px]'>Choose Skills for MCQ's *</legend>
 
-
-
                                 {skillsList.map((skill) => (
                                     <div key={getSkillName(skill.name)} className="flex flex-col justify-between">
                                         <FormControlLabel
@@ -222,8 +233,31 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                                                     name={getSkillName(skill.name)}
                                                     checked={selectedSkills?.find((item) => item?.id == getSkillId(skill))}
                                                     onChange={handleCheckboxChangeSkills}
-                                                    sx={{ color: 'white' }}
-                                                    value={getSkillId(skill)}
+                                                    disableRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    sx={{
+                                                        color: 'gray',
+                                                        '&:hover': {
+                                                            color: 'gray',
+                                                            // backgroundColor: 'transparent'
+                                                        },
+                                                        '&.Mui-checked': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.Mui-checked:hover': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.MuiButtonBase-root:hover': {
+                                                            backgroundColor: 'grau',
+                                                        },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
+                                                    }} value={getSkillId(skill)}
                                                 />
                                             }
                                             label={getSkillName(skill)}
@@ -243,8 +277,31 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                                                             value={exp.id}
                                                             control={<Radio />}
                                                             label={exp.title}
-                                                            sx={{ color: 'white' }}
-                                                            onChange={(event) => handleSkillChange(event?.target?.value, getSkillId(skill))}
+                                                            disableRipple
+                                                            TouchRippleProps={{ style: { color: 'gray' } }}
+                                                            sx={{
+                                                                color: 'gray',
+                                                                '&:hover': {
+                                                                    color: 'gray',
+                                                                    // backgroundColor: 'transparent'
+                                                                },
+                                                                '&.Mui-checked': {
+                                                                    color: 'gray',
+                                                                },
+                                                                '&.Mui-checked:hover': {
+                                                                    color: 'gray',
+                                                                },
+                                                                '&.MuiButtonBase-root:hover': {
+                                                                    backgroundColor: 'grau',
+                                                                },
+                                                                '& .MuiSvgIcon-root': {
+                                                                    fontSize: 24,
+                                                                    color: 'gray',
+                                                                    '&:hover': {
+                                                                        color: 'yellow',
+                                                                    }
+                                                                },
+                                                            }} onChange={(event) => handleSkillChange(event?.target?.value, getSkillId(skill))}
                                                         />
                                                     ))}
                                                 </RadioGroup>
@@ -273,8 +330,31 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                                                     name={getSkillName(skill.name)}
                                                     checked={selectedProgramSkills?.find((item) => item?.id == getSkillId(skill))}
                                                     onChange={handleCheckboxChangeProgramSkills}
-                                                    sx={{ color: 'white' }}
-                                                    value={getSkillId(skill)}
+                                                    disableRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    sx={{
+                                                        color: 'gray',
+                                                        '&:hover': {
+                                                            color: 'gray',
+                                                            // backgroundColor: 'transparent'
+                                                        },
+                                                        '&.Mui-checked': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.Mui-checked:hover': {
+                                                            color: 'gray',
+                                                        },
+                                                        '&.MuiButtonBase-root:hover': {
+                                                            backgroundColor: 'grau',
+                                                        },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
+                                                    }} value={getSkillId(skill)}
                                                 />
                                             }
                                             label={getSkillName(skill)}
@@ -294,8 +374,31 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                                                             value={exp.id}
                                                             control={<Radio />}
                                                             label={exp.title}
-                                                            sx={{ color: 'white' }}
-                                                            onChange={(event) => handleSkillChangeProgram(event?.target?.value, getSkillId(skill))}
+                                                            disableRipple
+                                                            TouchRippleProps={{ style: { color: 'gray' } }}
+                                                            sx={{
+                                                                color: 'gray',
+                                                                '&:hover': {
+                                                                    color: 'gray',
+                                                                    // backgroundColor: 'transparent'
+                                                                },
+                                                                '&.Mui-checked': {
+                                                                    color: 'gray',
+                                                                },
+                                                                '&.Mui-checked:hover': {
+                                                                    color: 'gray',
+                                                                },
+                                                                '&.MuiButtonBase-root:hover': {
+                                                                    backgroundColor: 'grau',
+                                                                },
+                                                                '& .MuiSvgIcon-root': {
+                                                                    fontSize: 24,
+                                                                    color: 'gray',
+                                                                    '&:hover': {
+                                                                        color: 'yellow',
+                                                                    }
+                                                                },
+                                                            }} onChange={(event) => handleSkillChangeProgram(event?.target?.value, getSkillId(skill))}
                                                         />
                                                     ))}
                                                 </RadioGroup>
@@ -329,7 +432,7 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                         </Grid>
                     </Grid>
                 </div>
-                <div className='sticky bottom-0 bg-[#272C33] z-10 flex justify-end px-6 gap-x-2 py-5'>
+                <div className='sticky bottom-0 z-10 flex justify-end px-6 gap-x-2 py-5'>
                     <Button onClick={handleCloseDialog}
                         style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
                         onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}

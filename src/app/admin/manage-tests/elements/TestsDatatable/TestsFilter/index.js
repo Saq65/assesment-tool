@@ -112,7 +112,7 @@ const TestsFilter = ({ filters, setFilters }) => {
                         }
                     }}
                 >
-                    <div className="absolute right-0 mt-2 w-[620px] p-4 bg-primary-300 rounded-2xl shadow-lg z-50">
+                    <div className="absolute right-0 mt-2 w-[620px] p-4  bg-[#343A40] rounded-2xl shadow-lg z-50">
                         {/* Header */}
                         <header className="flex items-center justify-between pb-4">
                             <h2 className="text-md font-semibold">Filters</h2>
@@ -137,8 +137,28 @@ const TestsFilter = ({ filters, setFilters }) => {
                                                 value={filter.filterType}
                                                 onChange={(e) => handleFilterChange(filter.id, e.target.value)}
                                                 label="Select Filter"
-                                                onOpen={handleSelectOpen} // Open select dropdown
-                                                onClose={handleSelectClose} // Close select dropdown
+                                                onOpen={handleSelectOpen} 
+                                                onClose={handleSelectClose} 
+                                                MenuProps={{
+                                                    PaperProps: {},
+                                                    disableScrollLock: true, 
+                                                }}
+                                                disableRipple 
+                                                autoFocus={false}
+                                                sx={{
+                                                    '& .MuiOutlinedInput-notchedOutline': {
+                                                        borderColor: 'gray',
+                                                    },
+                                                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                                                        borderColor: 'gray !important', 
+                                                    },
+                                                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                                        borderColor: 'gray !important',
+                                                    },
+                                                    '& .MuiSelect-select:focus': {
+                                                        backgroundColor: 'transparent', 
+                                                    },
+                                                }}
                                             >
                                                 {getAvailableFilterOptions(filter.id).map((option) => (
                                                     <MenuItem key={option} value={option}>
@@ -154,7 +174,7 @@ const TestsFilter = ({ filters, setFilters }) => {
                                     </div>
 
                                     {/* Date Picker */}
-                                    <div className="flex-1">
+                                    <div className="flex-1 ">
                                         {filter.filterType === "Test Status" ? (
                                             <TestStatusInput
                                                 statusInput={filter.statusInput}
@@ -202,6 +222,9 @@ const TestsFilter = ({ filters, setFilters }) => {
                                     size="small"
                                     onClick={handleAddFilter}
                                     disabled={filters.length >= 3}
+                                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")} 
+                                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")} 
                                 >
                                     + Add Filter
                                 </Button>
