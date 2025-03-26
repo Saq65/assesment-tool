@@ -22,12 +22,12 @@ const SidebarFull = ({ isSidebarOpen, toggleSidebar }) => {
                 <SidebarHeader />
             </div>
 
-            <ul className="mr-[-10px] flex h-[90%] flex-col gap-1 overflow-y-auto pr-[10px] transition-all duration-300 ease-in-out">
+            <ul style={{rowGap:'0px'}} className="mr-[-10px] flex h-[90%] flex-col overflow-y-auto pr-[10px] transition-all duration-300 ease-in-out">
                 {sideBarData?.map((val, i) => (
                     <li key={val?.label} className='px-3'>
                         <Link
                             href={val.route}
-                            className={`nav-link flex items-center text-newCodes-sideLinks justify-start gap-3 rounded-lg px-3 py-3 transition duration-[0.4s] hover:text-newCodes-sideLinksHover ${isActive(val.routeName) ? "text-newCodes-sideLinksActive" : ""}`}
+                            className={`nav-link flex items-center text-newCodes-sideLinks justify-start gap-2 rounded-lg px-3 py-3 transition duration-[0.4s] hover:text-newCodes-sideLinksHover ${isActive(val.routeName) ? "text-newCodes-sideLinksActive" : ""}`}
                         >
                             {val.Icon}
                             <span

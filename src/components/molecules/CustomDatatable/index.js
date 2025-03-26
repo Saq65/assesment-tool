@@ -110,7 +110,7 @@ const CustomDatatable = ({
 
     console.log(rowSelectionModel, "role selection models")
 
-    const newLocal = <div style={{ maxHeight: 600, minHeight: 500, width: "100%", overflowY: "scroll", paddingRight: "10px" ,backgroundColor:'#272C33'}}>
+    const newLocal = <div style={{ maxHeight: 600, minHeight: 500, width: "100%", overflowY: "scroll", paddingRight: "10px", backgroundColor: '#272C33' }}>
         <DataGrid
             resizeThrottleMs={0}
             rows={rows}
@@ -138,12 +138,37 @@ const CustomDatatable = ({
                 minHeight: 500,
                 border: "none !important",
                 '& .MuiDataGrid-columnHeader': {
-                    backgroundColor: '#343A40 !important', // Set your desired background color here
-                    color: '#94A3B8', // Optional: change text color of the header
-                    font: "14px",
+                    backgroundColor: '#343A40 !important',
+                    color: '#94A3B8',
+                    fontSize: "14px",
                     fontWeight: 500,
-                    lineHeight: 20
-                    // border: 'none !important'
+                    lineHeight: 20,
+                    display: 'flex',
+                    justifyContent: 'center', 
+                    alignItems: 'center', 
+                    textAlign: 'center',
+                },
+
+
+                '& .MuiDataGrid-columnHeaderTitleContainer': {
+                    display: 'flex',
+                    justifyContent: 'center', 
+                    alignItems: 'center',
+                    flexGrow: 1, 
+                },
+                '& .MuiDataGrid-columnHeaderTitle': {
+                    textAlign: 'center',
+                    width: '100%',
+                    display: 'block',
+                    flexGrow: 1,
+                },
+
+
+                '& .MuiDataGrid-cell': {
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
                 },
                 '& .MuiDataGrid-overlay': {
                     background: 'none !important', // Set your desired background color here
