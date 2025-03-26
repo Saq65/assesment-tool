@@ -133,7 +133,7 @@ const CustomDatatable = ({
             hideFooter
             loading={pagination?.loading}
             onRowClick={!checkboxSelection && onRowClick}
-        
+
             sx={{
                 transition: 'all 1s ease',
                 minHeight: 500,
@@ -145,17 +145,17 @@ const CustomDatatable = ({
                     fontWeight: 500,
                     lineHeight: 20,
                     display: 'flex',
-                    justifyContent: 'center', 
-                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     textAlign: 'center',
                 },
 
 
                 '& .MuiDataGrid-columnHeaderTitleContainer': {
                     display: 'flex',
-                    justifyContent: 'center', 
+                    justifyContent: 'center',
                     alignItems: 'center',
-                    flexGrow: 1, 
+                    flexGrow: 1,
                 },
                 '& .MuiDataGrid-columnHeaderTitle': {
                     textAlign: 'center',
@@ -172,20 +172,20 @@ const CustomDatatable = ({
                     textAlign: 'center',
                 },
                 '& .MuiDataGrid-overlay': {
-                    background: 'none !important', // Set your desired background color here
+                    background: 'none !important',
                     // border: 'none !important'
                 },
                 '& .MuiDataGrid-filler': {
-                    backgroundColor: '#1e293b !important', // Set your desired background color here
-                    color: '#ffffff', // Optional: change text color of the header
+                    backgroundColor: '#1e293b !important',
+                    color: '#ffffff',
                     // border: 'none !important'
                 },
                 '& .MuiDataGrid-row:hover': {
-                    backgroundColor: '#343A40', // Row hover background color
-                    cursor: 'pointer', // Change cursor to pointer on hover
+                    backgroundColor: '#343A40',
+                    cursor: 'pointer',
                 },
                 '& .MuiDataGrid-columnSeparator': {
-                    visibility: 'hidden', // Hide column borders
+                    visibility: 'hidden',
                 },
                 '& .MuiDataGrid-root': {
                     border: 'none !important', // Remove the outer border of the DataGrid
@@ -251,7 +251,6 @@ const CustomDatatable = ({
                 <Paper sx={{ padding: 3, background: "#272C33 !important" }}>
 
                     <div>
-
                         <div
                             className={`transition-all duration-300 ease-in-out flex items-center justify-end ${checkboxSelection ? 'opacity-0 h-0 visibility-hidden' : 'opacity-100 h-auto visibility-visible'
                                 }`}
