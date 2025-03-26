@@ -133,6 +133,7 @@ const CustomDatatable = ({
             hideFooter
             loading={pagination?.loading}
             onRowClick={!checkboxSelection && onRowClick}
+        
             sx={{
                 transition: 'all 1s ease',
                 minHeight: 500,
@@ -209,10 +210,11 @@ const CustomDatatable = ({
                 '& .MuiDataGrid-row.Mui-selected:hover': {
                     background: "#0F172A"
                 },
+
             }}
             slots={{
                 noRowsOverlay: () => (
-                    <div className="w-full h-full flex justify-center items-center bg-[#272C33]">
+                    <div className="w-full h-full flex justify-center items-center bg-[#1D2126]">
                         <p className="text-white text-md">{!pagination?.loading && "No records"}</p>
                     </div>
                 ),

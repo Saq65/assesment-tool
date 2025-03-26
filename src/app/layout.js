@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased bg-primary-300 !overflow-auto`}
+        className={`${inter.className} antialiased bg-[#1D2126] !overflow-auto`}
       >
         <ThemeProvider theme={DarkSpacesTheme}>
           <StoreProvider>

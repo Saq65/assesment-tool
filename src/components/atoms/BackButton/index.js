@@ -14,7 +14,7 @@ const BackButton = () => {
         <IconButton
             onClick={handleBack}
         >
-            <ArrowBackIcon sx={{ color: "#7DD3FC" }} />
+            <ArrowBackIcon sx={{ color: "#ffffff" }} />
             <span className='text-sm ml-2'>Back</span>
         </IconButton>
     );

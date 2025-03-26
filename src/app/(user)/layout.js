@@ -21,7 +21,7 @@ const UserLayout = ({ children }) => {
 
     if (isUnsupported) {
         return (
-            <div className="flex items-center justify-center min-h-screen bg-primary-300 px-4">
+            <div className="flex items-center justify-center min-h-screen bg-[#1D2126] px-4">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-blue-400">
                         Unsupported Browser

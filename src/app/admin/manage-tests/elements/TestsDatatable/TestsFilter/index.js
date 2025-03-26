@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IconButton, Button, ClickAwayListener, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { IconButton, Button, ClickAwayListener, FormControl, InputLabel, Select, MenuItem, DialogTitle } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import FilterOperator from "../FilterOperator";
 import TimePeriodSelector from "../TimePeriodSelector";
@@ -8,6 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { getFiltersCount } from "@/utils";
 import FilterButton from "../FilterButton";
 import JobPositionSelector from "../JobPositionSelector";
+import { GridCloseIcon } from "@mui/x-data-grid";
 
 // const selectFilterOptions = ["Status", "Created at"];
 const selectFilterOptions = ["Test Status", "Test Date", "Job Position"];
@@ -119,9 +120,10 @@ const TestsFilter = ({ filters, setFilters }) => {
                             <IconButton onClick={() => {
                                 setIsOpen(false)
                                 setFilters([{ id: 1, filterType: "Test Status", statusInput: [], timePeriodValue: "", jobPositionValue: [] }])
-                            }} style={{ color: '#E53E3E', paddingInline: "10px" }} size="small">
-                                <button className="text-blue-600 text-sm">Clear All</button>
+                            }} style={{ color: '#fff', paddingInline: "10px" }} size="small">
+                                    <GridCloseIcon />
                             </IconButton>
+
                         </header>
 
                         {/* Body */}
@@ -137,26 +139,26 @@ const TestsFilter = ({ filters, setFilters }) => {
                                                 value={filter.filterType}
                                                 onChange={(e) => handleFilterChange(filter.id, e.target.value)}
                                                 label="Select Filter"
-                                                onOpen={handleSelectOpen} 
-                                                onClose={handleSelectClose} 
+                                                onOpen={handleSelectOpen}
+                                                onClose={handleSelectClose}
                                                 MenuProps={{
                                                     PaperProps: {},
-                                                    disableScrollLock: true, 
+                                                    disableScrollLock: true,
                                                 }}
-                                                disableRipple 
+                                                disableRipple
                                                 autoFocus={false}
                                                 sx={{
                                                     '& .MuiOutlinedInput-notchedOutline': {
                                                         borderColor: 'gray',
                                                     },
                                                     '&:hover .MuiOutlinedInput-notchedOutline': {
-                                                        borderColor: 'gray !important', 
+                                                        borderColor: 'gray !important',
                                                     },
                                                     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
                                                         borderColor: 'gray !important',
                                                     },
                                                     '& .MuiSelect-select:focus': {
-                                                        backgroundColor: 'transparent', 
+                                                        backgroundColor: 'transparent',
                                                     },
                                                 }}
                                             >
@@ -222,12 +224,30 @@ const TestsFilter = ({ filters, setFilters }) => {
                                     size="small"
                                     onClick={handleAddFilter}
                                     disabled={filters.length >= 3}
-                                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
-                                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")} 
-                                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")} 
+                                    sx={{
+                                        backgroundColor: "#343A40",
+                                        color: "#FFFFFF",
+                                        borderColor: "#FFFFFF", // Ensures the border is white
+                                        "&:hover": {
+                                            backgroundColor: "#343A40", // Prevents background color change on hover
+                                            borderColor: "gray", // Ensures border remains the same
+                                        },
+                                        "&.Mui-focusVisible": {
+                                            outline: "none !important", // Removes the blue outline when focused
+                                        },
+                                        "&:focus": {
+                                            outline: "none !important",
+                                            borderColor: "#FFFFFF", // Ensures border does not change on focus
+                                        },
+                                        "&:active": {
+                                            backgroundColor: "#343A40", // Ensures no color change when clicking
+                                            borderColor: "#FFFFFF",
+                                        },
+                                    }}
                                 >
                                     + Add Filter
                                 </Button>
+
                             )}
                         </div>
                     </div>

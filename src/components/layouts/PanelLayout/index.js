@@ -23,13 +23,12 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
 
     return (
         <div className="main-container">
-            <div className={`relative left-0 top-0 block md:pl-[90px] duration-300 ] transition-all`}
+            <div className={`relative left-0 top-0 block md:pl-[90px] duration-300 transition-all`}
                 style={{
-                    paddingLeft: isSidebarOpen ? "210px" : "90px",
-                        
+                    paddingLeft: isSidebarOpen ? "210px" : "90px"
                 }}
             >
-                <div className="sticky top-0 z-20 flex w-full flex-wrap items-start gap-y-4 border-b-[0.5px] border-primary-400 bg-[#1B1F24] text-white px-[32px] py-[12px]">
+                <div className="sticky top-0 z-20 flex w-full flex-wrap items-start gap-y-4 border-b-[0.5px] border-primary-400 bg-newCodes-background text-white px-[32px] py-[12px]">
                     <div className="relative">
                         <div
                             className={`fixed left-0 top-0 z-10 h-full  transition-all duration-300 ease-in-out md:block `}
@@ -39,7 +38,7 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
                         >
                             <button
                                 onClick={toggleSidebar}
-                                className="absolute flex bg-[#1E293B] justify-center items-center h-[22px] w-[22px] bg-[#334155] transition-all duration-300 ease-in-out  rounded-full top-[24px] opacity-70"
+                                className="absolute flex justify-center items-center h-[22px] w-[22px] bg-[#334155] transition-all duration-300 ease-in-out  rounded-full top-[24px] opacity-70"
                                 style={{
                                     left: isSidebarOpen ? "195px" : "78px", // Smoothly moves during transition
                                 }}
@@ -75,12 +74,12 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
 
                     </div>
 
-                    <div className='flex items-center justify-between w-full ' >
+                    <div className='flex items-center justify-between w-full'>
                         <BreadCrumbs pageTitle={pageTitle} breadcrumbsData={breadcrumbsData} />
                         <ProfileDropdown />
                     </div>
                 </div>
-                <div className="h-full bg-newCodes-background px-6 py-3">
+                <div className="h-full bg-newCodes-background px-6 py-5">
                     {children}
                 </div>
             </div>
@@ -88,4 +87,4 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
     );
 }
 
-export default PanelLayout;
+export default PanelLayout

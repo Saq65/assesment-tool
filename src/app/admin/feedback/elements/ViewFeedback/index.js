@@ -8,7 +8,7 @@ const ViewFeedback = () => {
     const feedback = useSelector(feedbackSelector);
 
     return (
-        <div className="w-full mx-auto p-8 bg-primary-200 rounded-lg shadow-lg mt-10 space-y-8">
+        <div className="w-full mx-auto p-8 bg-newCodes-foreground rounded-lg shadow-lg h-full mt-10 space-y-8">
             {/* Header with Candidate Info */}
             <div className="flex justify-between items-center">
                 <h2 className="text-3xl font-semibold text-gray-200">Feedback from {feedback?.name}</h2>
