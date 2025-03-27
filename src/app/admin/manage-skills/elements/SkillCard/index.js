@@ -103,7 +103,7 @@ const SkillCard = ({ id, title, levels, onEdit, onDelete, selected, showOptions 
                 onClose={handleMenuClose}
                 PaperProps={{
                     sx: {
-                        backgroundColor: "#0E1626",
+                        backgroundColor: "#343A40",
                         color: "white",
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.25)",
                         borderRadius: "8px",
