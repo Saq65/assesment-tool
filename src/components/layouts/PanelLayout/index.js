@@ -38,7 +38,7 @@ const PanelLayout = ({ children, pageTitle, breadcrumbsData }) => {
                         >
                             <button
                                 onClick={toggleSidebar}
-                                className="absolute flex justify-center items-center h-[22px] w-[22px] bg-[#334155] transition-all duration-300 ease-in-out  rounded-full top-[24px] opacity-70"
+                                className="absolute flex shadow-lg justify-center items-center h-[22px] w-[22px] bg-[#343A40] transition-all duration-300 ease-in-out  rounded-full top-[24px] opacity-70"
                                 style={{
                                     left: isSidebarOpen ? "195px" : "78px", // Smoothly moves during transition
                                 }}

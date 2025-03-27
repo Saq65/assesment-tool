@@ -74,7 +74,7 @@ const ProfileDropdown = () => {
                     >
                         <g id="Arrows / down arrow (right)">
                             <g clipPath="url(#clip0_980_1079)">
-                                <rect width={24} height={24} rx={12} fill="#334155" />
+                                <rect width={24} height={24} rx={12} fill="#343A40" />
                                 <path
                                     id="Vector"
                                     d="M8.70956 11.71L11.2996 14.3C11.6896 14.69 12.3196 14.69 12.7096 14.3L15.2996 11.71C15.9296 11.08 15.4796 10 14.5896 10H9.40956C8.51956 10 8.07956 11.08 8.70956 11.71Z"
@@ -107,7 +107,7 @@ const ProfileDropdown = () => {
                 className="mt-2"
                 PaperProps={{
                     sx: {
-                        backgroundColor: "#343A40", // Dark navy background
+                        backgroundColor: "#343A40", 
                         color: "white",
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.25)",
                         borderRadius: "8px",
