@@ -186,21 +186,21 @@ const CustomDatatable = ({
                     visibility: 'hidden',
                 },
                 '& .MuiDataGrid-root': {
-                    border: 'none !important', // Remove the outer border of the DataGrid
-                    boxShadow: 'none !important', // Remove any box-shadow if present
+                    border: 'none !important', 
+                    boxShadow: 'none !important', 
                 },
                 '& .MuiDataGrid-cell:focus': {
-                    outline: 'none', // Remove focus outline
-                    borderColor: 'none', // Remove border
+                    outline: 'none',
+                    borderColor: 'none', 
                 },
                 '& .MuiDataGrid-cell:focus-within': {
-                    outline: 'none', // Remove focus outline
-                    borderColor: 'none', // Remove border
+                    outline: 'none', 
+                    borderColor: 'none', 
                 },
 
                 '& .MuiDataGrid-columnHeader:focus': {
-                    outline: 'none', // Remove focus outline
-                    borderColor: 'none', // Remove border
+                    outline: 'none', 
+                    borderColor: 'none', 
                 },
                 '& .MuiDataGrid-row.Mui-selected': {
                     background: "#343A40"
@@ -208,8 +208,8 @@ const CustomDatatable = ({
                 '& .MuiDataGrid-row.Mui-selected:hover': {
                     background: "#343A40"
                 },
-
-
+            
+                  
             }}
             slots={{
                 noRowsOverlay: () => (
@@ -260,8 +260,6 @@ const CustomDatatable = ({
                         </div>
 
                         <RowSelection handleOpenDialog={handleOpenDialog} checkboxSelection={checkboxSelection} setCheckboxSelection={setCheckboxSelection} rowSelectionModel={rowSelectionModel} handleRemoveCheckboxSelection={handleRemoveCheckboxSelection} />
-
-
 
                         {newLocal}
                     </div>

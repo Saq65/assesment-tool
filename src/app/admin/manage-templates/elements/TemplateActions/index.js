@@ -108,9 +108,9 @@ const TemplateActions = ({ params, handleOpenDialogDel, handleOpenUseTemplateDia
                 onClose={handleMenuClose}
                 PaperProps={{
                     sx: {
-                        backgroundColor: "#0E1626", // Dark navy background
+                        backgroundColor: "#272C33",
                         color: "white",
-                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.25)",
+                        boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' ,
                         borderRadius: "8px",
                         padding: "8px 0",
                         width: "130px"
