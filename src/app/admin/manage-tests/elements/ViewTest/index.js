@@ -140,7 +140,9 @@ const ViewTest = () => {
                 {!["expired", "finished", "disQualified"].includes(test?.status) && <Button
                     onClick={handleSendTest}
                     // disabled={isTestSent || test?.isTestSent}
-                    variant="primary"
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
                 >
                     {isTestSent || test?.isTestSent ? "Resend Test" : "Send Test"}
                 </Button>}

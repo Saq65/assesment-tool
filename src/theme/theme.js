@@ -298,7 +298,7 @@ export const DarkSpacesTheme = createTheme({
     },
     background: {
       paper: colors.alpha.white[100],
-      default: colors.layout.general.bodyBg,
+      default: colors.success.light,
     },
     action: {
       active: colors.alpha.black[100],
@@ -345,7 +345,7 @@ export const DarkSpacesTheme = createTheme({
         },
         // Info severity
         filledInfo: {
-          backgroundColor: "#D1ECF1", // Light blue background for info
+          backgroundColor: "#000", // Light blue background for info
           color: "#0C5460", // Title text color
         },
         // Warning severity
@@ -360,13 +360,21 @@ export const DarkSpacesTheme = createTheme({
       },
     },
 
+   
+
     MuiCircularProgress: {
       styleOverrides: {
+        root: {
+          backgroundColor: "#1E293B", // Change background color of parent div
+          borderRadius: "50%", // Optional: Make it circular
+          padding: "10px", // Optional: Add spacing around it
+        },
         circle: {
-          stroke: "#60A5FA", // Custom color for the circular progress stroke
+          stroke: "#fff", // Custom stroke color
         },
       },
     },
+
     // MuiBackdrop: {
     //     styleOverrides: {
     //         root: {
@@ -429,6 +437,7 @@ export const DarkSpacesTheme = createTheme({
         },
         "#nprogress": {
           pointerEvents: "none",
+
         },
         "#nprogress .bar": {
           background: colors.primary.lighter,
@@ -513,15 +522,15 @@ export const DarkSpacesTheme = createTheme({
           },
           // Default hover state
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#3B82F6",
+            borderColor: "#272C33",
           },
           // Focused state
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#3B82F6",
+            borderColor: "#fff",
           },
           // Hover when focused
           "&.Mui-focused:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#3B82F6",
+            borderColor: "#fff",
           },
           // Error state
           "&.Mui-error .MuiOutlinedInput-notchedOutline": {
@@ -582,7 +591,7 @@ export const DarkSpacesTheme = createTheme({
             backgroundColor: "rgba(125, 211, 252, 0.1)",
           },
           "&.Mui-focusVisible": {
-            outline: "2px solid #7DD3FC", // Focus ring
+            outline: "2px solid black", // Focus ring
           },
         },
       },
@@ -590,17 +599,18 @@ export const DarkSpacesTheme = createTheme({
     MuiCheckbox: {
       styleOverrides: {
         root: {
-          color: "#374151", 
+          color: "#374151",
+          // backgroundColor:'#000',
           "&.Mui-checked": {
-            color: "#7DD3FC", 
-            backgroundColor:'#272C33'
+            color: "#808080",
+            backgroundColor: '#343A40'
           },
           "&:hover": {
-            color: "#7DD3FC", 
+            color: "#808080",
             backgroundColor: "#272C33",
           },
           "&.Mui-focusVisible": {
-            outline: "2px solid #fff", 
+            outline: "2px solid #fff",
           },
         },
       },
