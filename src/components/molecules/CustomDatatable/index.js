@@ -170,11 +170,11 @@ const CustomDatatable = ({
                     textAlign: 'center',
                 },
                 '& .MuiDataGrid-overlay': {
-                    background: 'none !important',
+                    background: '#343A40 !important',
                     // border: 'none !important'
                 },
                 '& .MuiDataGrid-filler': {
-                    backgroundColor: '#1e293b !important',
+                    backgroundColor: '#343A40 !important',
                     color: '#ffffff',
                     // border: 'none !important'
                 },
@@ -260,6 +260,7 @@ const CustomDatatable = ({
                         </div>
 
                         <RowSelection handleOpenDialog={handleOpenDialog} checkboxSelection={checkboxSelection} setCheckboxSelection={setCheckboxSelection} rowSelectionModel={rowSelectionModel} handleRemoveCheckboxSelection={handleRemoveCheckboxSelection} />
+
 
 
                         {newLocal}
