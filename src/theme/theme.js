@@ -624,6 +624,8 @@ export const DarkSpacesTheme = createTheme({
           },
         },
         label: {
+          color:'#FFFFFFB3',
+          fontSize:'12px',
           "&:hover": {
             // color: '#7DD3FC', // Hover effect on the label itself
           },

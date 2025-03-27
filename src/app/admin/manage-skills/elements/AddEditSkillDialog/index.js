@@ -53,13 +53,13 @@ const AddEditSkillDialog = ({
       onClose={handleCloseDialog}
       BackdropProps={{
         sx: {
-          backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark overlay
-          backdropFilter: "blur(5px)", // Blur effect
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          backdropFilter: "blur(5px)",
         },
       }}
       sx={{
         "& .MuiDialog-paper": {
-          backgroundColor: "#272C33",
+          backgroundColor: "#1D2126",
           borderRadius: "16px",
           width: 450,
           padding: "20px",
@@ -111,7 +111,6 @@ const AddEditSkillDialog = ({
             style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
             onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
             onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
-          
           >
             Cancel
           </Button>
@@ -119,7 +118,7 @@ const AddEditSkillDialog = ({
             type="submit"
             size="medium"
             padding="10px 20px"
-            style={{ backgroundColor: "#21262c", color: "#FFFFFF" }}
+            style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
             onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
             onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
           >

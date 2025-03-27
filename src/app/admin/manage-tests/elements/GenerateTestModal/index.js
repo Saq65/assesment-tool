@@ -257,16 +257,20 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
                                                                 color: 'yellow',
                                                             }
                                                         },
+                                                        
                                                     }}
-                                                     value={getSkillId(skill)}
+                                                    value={getSkillId(skill)}
+                                                    
                                                 />
                                             }
                                             label={getSkillName(skill)}
+
+                                            
                                         />
                                         {/* {selectedSkills?.find((item) => item?.skillId == getSkillId(skill?.id)) && ( */}
                                         {selectedSkills?.find((item) => item?.skillId == getSkillId(skill)) && (
                                             <FormControl component="fieldset" sx={{ marginInline: 3 }}>
-                                                <span className="text-xs">Select Skill Level</span>
+                                                <span className=' !text-[#FFFFFFB3] !text-[12px]'>Select Skill Level</span>
                                                 <RadioGroup
                                                     name={skill.skillId}
                                                     value={selectedSkills?.find((item) => item?.skillId == getSkillId(skill))?.levelId}
@@ -314,7 +318,7 @@ const GenerateTestModal = ({ openDialog, handleCloseDialog, handleGenerateTest }
 
 
                             </fieldset>
-                            {formik?.touched?.skills && <FormHelperText className='!text-[#FF1943]'>{formik?.errors?.skills}</FormHelperText>}
+                            {formik?.touched?.skills && <FormHelperText className=' text-[#FFFFFFB3] !text-[12px]'>{formik?.errors?.skills}</FormHelperText>}
                         </Grid>
 
                         {/*  Program Skills Selection Section */}
