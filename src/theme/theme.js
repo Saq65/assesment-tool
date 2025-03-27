@@ -53,7 +53,7 @@ const colors = {
   },
   layout: {
     general: {
-      bodyBg: "#1C1C1C",
+      bodyBg: "#272C33",
     },
     sidebar: {
       background: themeColors.primaryAlt,
@@ -298,7 +298,7 @@ export const DarkSpacesTheme = createTheme({
     },
     background: {
       paper: colors.alpha.white[100],
-      default: colors.success.light,
+      default: colors.layout.general.bodyBg,
     },
     action: {
       active: colors.alpha.black[100],
