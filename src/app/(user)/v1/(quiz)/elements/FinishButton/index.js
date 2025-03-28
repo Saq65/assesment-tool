@@ -21,13 +21,12 @@ const FinishButton = ({ sx = {} }) => {
                 size="small"
                 variant="contained"
                 sx={{
-                    borderColor: '#7DD3FC', // Set border color
-                    color: '#7DD3FC', // Set text color
-                    background: "#7DD3FC",
-                    color: 'black',
+                    borderColor: '#7DD3FC', 
+                    color: '#fff', 
+                    background: "#343A40",
                     '&:hover': {
-                        backgroundColor: '#7DD3FC', // Set background on hover
-                        color: 'black', // Set text color on hover
+                        backgroundColor: 'gray', 
+                        color: '#ffffff', 
                     },
                     ...sx,
                 }}

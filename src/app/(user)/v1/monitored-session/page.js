@@ -86,7 +86,7 @@ const Page = () => {
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-primary-300">
-            <div className="bg-primary-400 w-[500px] rounded-lg p-8 shadow-md">
+            <div className="bg-newCodes-foreground w-[500px] rounded-lg p-8 shadow-md">
                 {/* Header */}
                 <h1 className="text-xl font-bold text-white mb-4">Monitored Session</h1>
 
@@ -114,7 +114,12 @@ const Page = () => {
                 </div>
 
                 {/* Button */}
-                <Button id="proceed-btn" className="w-full py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition" onClick={startTest}>
+                <Button id="proceed-btn"
+                    className="w-full py-2 text-white font-semibold rounded hover:bg-blue-700 transition"
+                    onClick={startTest}
+                    style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                >
                     Proceed to Test
                 </Button>
             </div>

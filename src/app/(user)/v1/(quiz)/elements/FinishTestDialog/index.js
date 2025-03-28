@@ -49,7 +49,7 @@ const FinishTestDialog = ({ openDialog, handleCloseDialog }) => {
             sx={{
 
                 '& .MuiDialog-paper': {
-                    backgroundColor: '#1E293B',
+                    backgroundColor: '#272C33',
                     borderRadius: 2,
                     color: '#FFFFFF',
                     // padding: 3,
@@ -124,6 +124,8 @@ const FinishTestDialog = ({ openDialog, handleCloseDialog }) => {
                         minWidth: 140,
                         padding: '10px 20px',
                     }}
+                    style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                 >
                     Back to Test
                 </Button>
@@ -135,6 +137,8 @@ const FinishTestDialog = ({ openDialog, handleCloseDialog }) => {
                         minWidth: 140,
                         padding: '10px 20px',
                     }}
+                    style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                 >
                     {/* {loading ? (
                         <CircularProgress size={24} sx={{ color: '#FFFFFF' }} />

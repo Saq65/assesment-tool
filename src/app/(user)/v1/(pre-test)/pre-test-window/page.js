@@ -21,11 +21,11 @@ const Page = () => {
     <div class="flex-grow flex items-center justify-center container mx-auto">
       <div class="w-full md:w-1/2 p-4">
         <h2 className="text-[25px] text-blue-400">Hi {user?.candidateName}</h2>
-        <h2 className="text-[20px] text-blue-400">Welcome to</h2>
-        <h1 className="text-[40px] font-bold text-blue-400">
+        <h2 className="text-[20px] mt-1 text-blue-400">Welcome to</h2>
+        <h1 className="text-[40px] mt-1 font-bold text-blue-400">
           Zeus Tech Assessment
         </h1>
-        <div class="flex flex-col md:flex-row">
+        <div class="flex flex-col md:flex-row mt-1">
           <div class="w-full md:w-1/3 text-white">
             <span className="block">Question count:</span>
             <span className="font-semibold">

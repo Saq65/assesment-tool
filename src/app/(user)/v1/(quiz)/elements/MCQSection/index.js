@@ -66,7 +66,7 @@ const MCQSection = () => {
 
 
     return (
-        <div className="flex-1 p-6 bg-primary-400 overflow-y-auto  border rounded-lg border-solid border-primary-400"
+        <div className="flex-1 p-6 bg-[#272C33] overflow-y-auto  border rounded-lg border-solid border-primary-400"
             style={{
                 height: testState?.testInfo?.sectionsCount == 2 ? 'calc(100vh - 230px)' : 'calc(100vh - 200px)'
             }}
@@ -107,7 +107,7 @@ const MCQSection = () => {
                                     control={
                                         <Radio
                                             sx={{
-                                                color: "white", // Default color
+                                                color: "white",
                                             }}
                                         />
                                     }
@@ -116,13 +116,14 @@ const MCQSection = () => {
                                         display: "flex",
                                         alignItems: "center",
                                         color: "white", // Text color
-                                        border: `1px solid ${isSelected ? "#7DD3FC" : "#475569"}`, // Red border for selected, gray for others
+                                        border: `1px solid ${isSelected ? "#fff" : "gray"}`, 
                                         padding: "4px 12px",
                                         borderRadius: "8px",
                                         cursor: "pointer",
                                         marginBottom: 2,
                                         "&:hover": {
-                                            color: "#000", // Text color on hover
+                                            color: "#000", 
+                                            backgroundColor:'#272C33'
                                         },
                                     }}
                                 />

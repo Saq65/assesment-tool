@@ -36,11 +36,9 @@ function ArrowButton({ direction }) {
             size="small"
             variant="contained"
             sx={{
-                borderColor: '#7DD3FC', // Set border color
-                background: "#7DD3FC",
-                color: 'black',
+                color: '#fff',
                 '&:hover': {
-                    backgroundColor: '#7DD3FC', // Set background on hover
+                    backgroundColor: 'gray',
                     color: 'black', // Set text color on hover
                 },
                 zIndex: 20,
@@ -50,6 +48,8 @@ function ArrowButton({ direction }) {
                 display: nextBtnDisabled ? "none" : "block"
             }}
             onClick={handleClick}
+            style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
         >
             Next
         </Button>
@@ -58,20 +58,22 @@ function ArrowButton({ direction }) {
             size="small"
             variant="contained"
             sx={{
-                borderColor: '#7DD3FC', // Set border color
-                background: "#7DD3FC",
-                color: 'black',
+
+                color: '#fff',
                 '&:hover': {
-                    backgroundColor: '#7DD3FC', // Set background on hover
-                    color: 'black', // Set text color on hover
+                    backgroundColor: 'gray', // Set background on hover
+                    color: '#fff', // Set text color on hover
                 },
                 zIndex: 20,
                 position: "fixed",
                 bottom: 22,
                 left: 50,
                 display: prevBtnDisabled ? "none" : "block"
+
             }}
             onClick={handleClick}
+            style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
         >
             Prev
         </Button>

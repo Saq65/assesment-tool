@@ -45,7 +45,7 @@ export default function CodingSection() {
         <>
             <PanelGroup direction="vertical">
                 <Panel>
-                    <div className="bg-primary-400 h-full border rounded-lg border-solid border-primary-400">
+                    <div className="bg-[#272C33] h-full border rounded-lg border-solid border-primary-400">
                         <CodeEditor
                             language={currentQuestion?.programmingLanguage}
                             code={code}
@@ -68,7 +68,7 @@ export default function CodingSection() {
                     </div>
                 </PanelResizeHandle>
                 <Panel minSize={30}>
-                    <div className="bg-primary-400 h-full border rounded-lg border-solid border-primary-400">
+                    <div className="bg-[#272C33] h-full border rounded-lg border-solid border-primary-400">
                         <PanelGroup direction="horizontal">
                             <Panel className="!overflow-auto">
                                 <div>

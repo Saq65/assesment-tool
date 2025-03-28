@@ -30,7 +30,7 @@ const QuizPagination = () => {
 
 
   return (
-    <div className="p-4 bg-primary-400 rounded-lg shadow-md">
+    <div className="p-4 bg-[#272C33] rounded-lg shadow-md">
       {/* Questions  */}
       <div className="flex items-center mb-4">
         <QuestionTypeSwitch />

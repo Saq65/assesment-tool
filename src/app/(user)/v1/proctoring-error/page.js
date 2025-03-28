@@ -16,7 +16,7 @@ const ProctoringError = () => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen ">
-            <div className="bg-primary-100 p-6 rounded-lg shadow-md text-center">
+            <div className="bg-[#272C33] p-6 rounded-lg shadow-md text-center">
                 <h1 className="text-2xl font-bold text-blue-300 mb-4">Screen Share or Camera Issue Detected</h1>
                 <p className="text-white mb-6">
                     It looks like your screen sharing or camera isn’t responding. <br />

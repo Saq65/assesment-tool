@@ -30,7 +30,7 @@ const TestCompletionPage = () => {
     return (
         <div className="min-h-screen flex flex-col justify-center items-center px-4">
             {/* Test Completion Section */}
-            {feedbackSubmitted && <div className="bg-primary-200 rounded-lg shadow-md p-6 text-center max-w-md w-full">
+            {feedbackSubmitted && <div className="bg-[#272C33] rounded-lg shadow-md p-6 text-center max-w-md w-full">
                 <img
                     src="../logo.svg" // Replace with your image URL
                     alt="Completion Illustration"
@@ -43,7 +43,7 @@ const TestCompletionPage = () => {
                 <p className="text-white">Your responses have been submitted</p>
             </div>}
 
-            {!feedbackSubmitted && <div className="bg-primary-200 rounded-lg shadow-md p-6 text-center max-w-md w-full">
+            {!feedbackSubmitted && <div className="bg-[#272C33] rounded-lg shadow-md p-6 text-center max-w-md w-full">
                 <img
                     src="../logo.svg" // Replace with your image URL
                     alt="Completion Illustration"
@@ -58,7 +58,7 @@ const TestCompletionPage = () => {
 
 
             {/* Feedback Section */}
-            <div className="bg-primary-200 rounded-lg shadow-md p-6 text-center mt-6 max-w-md w-full">
+            <div className="bg-[#272C33] rounded-lg shadow-md p-6 text-center mt-6 max-w-md w-full">
                 {!feedbackSubmitted ? (
                     <>
                         <h3 className="text-lg font-bold text-white mb-4">
@@ -68,7 +68,7 @@ const TestCompletionPage = () => {
                         <StarRatings rating={rating} setRating={setRating} className='cursor-pointer' />
                         {/* Feedback Input */}
                         <textarea
-                            className="w-full text-white bg-primary-100 border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder:text-sm placeholder:text-[#64748bc3]"
+                            className="w-full text-white bg-[#1D2126] border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-white focus:outline-none placeholder:text-sm placeholder:text-[#64748bc3]"
                             placeholder="To understand your insights and punctuality, what would you optimise in the tool and what bugs did you find? Be as detailed in your findings and suggested solutions/optimisation"
                             value={feedback}
                             onChange={(e) => {
@@ -92,6 +92,8 @@ const TestCompletionPage = () => {
                             onClick={handleSubmitFeedback}
                             className={`w-full`}
                             variant='primary'
+                            style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                         >
                             Share your Feedback
                         </Button>

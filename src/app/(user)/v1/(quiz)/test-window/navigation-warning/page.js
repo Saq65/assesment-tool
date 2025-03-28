@@ -14,7 +14,7 @@ const NavigationWarning = () => {
     const router = useRouter()
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-primary-300">
-            <div className="bg-primary-100 p-6 rounded-lg shadow-md text-center">
+            <div className="bg-[#272C33] p-6 rounded-lg shadow-md text-center">
                 <h1 className="text-2xl font-bold text-red-600 mb-4">
                     {/* Navigated Away (Warning: 1/3) */}
                     Navigated Away (Warning: {testInfo?.warning}/{testInfo?.maxAllowedWarning})
@@ -31,7 +31,9 @@ const NavigationWarning = () => {
                     onClick={() => {
                         router.push("/v1/test-window")
                     }}
-                    className="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+                    className="px-6 py-3 text-white font-medium rounded-md hover:bg-gray-700 transition"
+                    style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                 >
                     Got It
                 </Button>

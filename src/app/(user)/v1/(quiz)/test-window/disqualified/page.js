@@ -16,7 +16,7 @@ const NavigationWarning = () => {
     const router = useRouter()
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-primary-300">
-            <div className="bg-primary-100 p-6 rounded-lg shadow-md text-center">
+            <div className="bg-newCodes-foreground p-6 rounded-lg shadow-md text-center">
                 <h1 className="text-2xl font-bold text-red-600 mb-4">
                     Test Auto-Submitted
                 </h1>

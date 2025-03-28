@@ -99,7 +99,9 @@ const ProctoringScreenError = () => {
                         <div className='flex justify-center'>
                             <Button
                                 onClick={() => refreshPage(getTestIdFromSession())}
-                                className="py-2 px-4 bg-primary-400 text-gray-200 font-medium rounded-md hover:bg-primary-500 transition"
+                                className="py-2 px-4 font-medium rounded-md hover:gray transition"
+                                style={{ backgroundColor: "#343A40", color: "#FFFFFF",cursor:'pointer'}}
+                                onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                             >
                                 Restart Test
                             </Button>

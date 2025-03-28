@@ -66,7 +66,7 @@ function QuizLayout() {
   }, [userAuthToken, socket]);
 
   return (
-    <div className="bg-primary-200 flex flex-col min-h-screen">
+    <div className="bg-[#1B1F24] flex flex-col min-h-screen">
       <QuizHeader />
 
       <div className="flex-1 flex flex-col mx-10 relative top-[-10px] shadow-md">
@@ -84,7 +84,7 @@ function QuizLayout() {
                   <LeftSection />
                 </Panel>
                 <PanelResizeHandle>
-                  <div className="relative bg-primary-100 justify-center w-2 flex items-center h-full">
+                  <div className="relative bg-[#272C33] justify-center w-2 flex items-center h-full">
                     <svg
                       className="absolute w-4 h-4 rotate-90 text-white"
                       viewBox="0 0 24 24"
