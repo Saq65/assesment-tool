@@ -136,17 +136,21 @@ const CustomDatatable = ({
             sx={{
                 transition: 'all 1s ease',
                 minHeight: 500,
-                border: "1px solid rgba(255, 255, 255, 0.2) !important", // Light border
+                border: "1px solid rgba(255, 255, 255, 0.2) !important", 
+                width:'100% !important',
                 '& .MuiDataGrid-columnHeader': {
                     backgroundColor: '#343A40 !important',
                     color: '#94A3B8',
                     fontSize: "14px",
                     fontWeight: 500,
-                    lineHeight: 20,
+                    lineHeight: 10,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     textAlign: 'center',
+                    minHeight:20  ,
+                    maxHeight:40,
+                    paddingLeft:5
                 },
 
 

@@ -137,6 +137,8 @@ const LoginForm = () => {
                     type="submit"
                     size="large"
                     variant="contained"
+                    style={{ backgroundColor: "#343A40", color: "#FFFFFF" }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                 >
                     Login
                 </Button>

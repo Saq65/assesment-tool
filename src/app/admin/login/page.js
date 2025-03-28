@@ -33,7 +33,7 @@ const LoginPage = () => {
                 </h1>
                 <p className="text-gray-400 ">Zestful Empowering Utilization System</p>
             </div>
-            <div className="w-full max-w-md p-8 bg-[#272c33] rounded-lg shadow-lg rounded-[12px] shadow-[rgba(0, 0, 0, 0.2) 0px 4px 12px]">
+            <div className="w-full max-w-md p-8 bg-newCodes-foreground rounded-lg shadow-lg rounded-[12px] shadow-[rgba(0, 0, 0, 0.2) 0px 4px 12px]">
                 <h2 className="text-xl font-bold text-gray-100 mb-6 text-center" id="login">Login</h2>
                 <LoginForm />
             </div>

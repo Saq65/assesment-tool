@@ -95,7 +95,7 @@ const TestAccessForm = () => {
 
     return (
         <main className="flex-grow flex items-center justify-center">
-            <div className="bg-primary-200 shadow-md rounded-md p-6 w-full max-w-md">
+            <div className="bg-newCodes-foreground shadow-md rounded-md p-6 w-full max-w-md">
                 <h2 className="text-center text-white text-[20px] font-bold font-medium mb-2">
                     Access Your Assessment
                 </h2>
@@ -116,7 +116,10 @@ const TestAccessForm = () => {
                     />
                     <Button type="submit" disabled={formik.isSubmitting || !formik.values.loginCode.trim()} endIcon={
                         formik.isSubmitting ? <CircularProgress size="1rem" /> : null
-                    }>
+                    }
+                        style={{ backgroundColor: "#343A40", color: "#FFFFFF" ,cursor:'po'}}
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                    >
                         Proceed
                     </Button>
                 </form>

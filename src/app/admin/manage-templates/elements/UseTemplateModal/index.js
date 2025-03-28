@@ -149,7 +149,7 @@ const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest })
                 {/* Scrollable Content */}
                 <div
                     ref={scrollableContentRef}
-                    className="px-6 overflow-y-auto flex-1 max-h-[calc(100vh-220px)] scroll-smooth"
+                    className="px-6 overflow-y-auto flex-1 max-h-[calc(100vh-300px)] scroll-smooth"
                 >
                     {/* Template Select */}
                     <div className="mb-4">
@@ -245,6 +245,7 @@ const UseTemplateModal = ({ openDialog, handleCloseDialog, handleGenerateTest })
                                     zIndex: 10,
                                     color: "black",
                                     background: "#7DD3FC",
+                                    marginBottom:'4px',
                                     "&:hover": {
                                         background: "#7DD3FC", // Same as the background color to disable hover color change
                                     },

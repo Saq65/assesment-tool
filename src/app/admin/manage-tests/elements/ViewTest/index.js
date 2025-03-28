@@ -78,11 +78,8 @@ const ViewTest = () => {
         }
     };
 
-
-
-
     return (
-        <div className=" mx-auto p-8 bg-[#1D2126] rounded-lg shadow-sm mt-4 space-y-8">
+        <div className=" mx-auto p-8 bg-[#1D2126] rounded-lg shadow-sm space-y-8">
             {/* Candidate Details */}
             <div className="flex justify-end"><TestStatus status={test?.status} /></div>
             <SectionBox title="Candidate details">
