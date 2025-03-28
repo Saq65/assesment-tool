@@ -20,10 +20,10 @@ const Page = () => {
     }
 
     return (
-        <main className="flex-grow flex my-4 items-center justify-center bg-primary-300">
+        <main className="flex-grow flex my-4 items-center justify-center ">
             <div className="bg-primary-200 shadow-md rounded-md w-full max-w-3xl">
 
-                <div className="bg-primary-200 p-6 rounded-md">
+                <div className="bg-newCodes-foreground p-6 rounded-md">
                     <h3 className="text-xl font-semibold mb-4 text-white">Test Guidelines</h3>
                     <ul className="pl-6 list-disc space-y-3 mb-2 text-white list-outside">
                         <li className='whitespace-nowrap'>Ensure a stable internet connection throughout the test to avoid any disruptions.</li>
@@ -51,6 +51,8 @@ const Page = () => {
                         <Button
                             disabled={!isAgreed}
                             onClick={handleNextClick}
+                            style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                         >
                             Next
                         </Button>

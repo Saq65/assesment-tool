@@ -3,7 +3,7 @@ import React from 'react';
 
 const Page = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-181px)] bg-primary-300">
+        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-181px)] bg-newCodes-foreground">
             <div className="bg-primary-100 p-6 rounded-lg shadow-md text-center">
                 <h1 className="text-2xl font-bold text-red-600 mb-4 leading-relaxed">
                     Test Auto-Submitted

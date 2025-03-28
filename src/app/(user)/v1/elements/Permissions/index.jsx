@@ -163,7 +163,7 @@ const Permissions = ({ canProceed, setCanProceed, setCurrentView }) => {
             Checking System Permissions
           </h3>
 
-          <div className="bg-primary-200 p-6 rounded-lg shadow-xl w-full">
+          <div className="bg-newCodes-foreground p-6 rounded-lg shadow-xl w-full">
             <table className="w-full text-left text-white">
               <tbody>
                 {permissions?.map((permission, idx) => (
@@ -177,14 +177,16 @@ const Permissions = ({ canProceed, setCanProceed, setCurrentView }) => {
                     button={
                       permission?.button &&
                       ["loading", "error"].includes(permission.status) && (
-                        <button
-                          className="disabled:bg-[#7DD3FC] bg-[#7DD3FC] text-black rounded-md mt-2 px-3 py-1"
+                        <Button
+                          className="disabled:bg-[#7DD3FC] rounded-md mt-3 px-3 py-1"
+                          style={{ backgroundColor: "#343A40", color: "#FFFFFF" ,fontWeight:'400'}}
+                          onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                           onClick={() => {
                             requestScreenPermissions();
                           }}
                         >
                           Start screen capture
-                        </button>
+                        </Button>
                       )
                     }
                   />
@@ -206,6 +208,8 @@ const Permissions = ({ canProceed, setCanProceed, setCurrentView }) => {
               router.push("/v1/monitored-session");
             }
           }}
+          style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
         >
           Next
         </Button>

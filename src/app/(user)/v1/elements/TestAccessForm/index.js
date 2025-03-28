@@ -99,7 +99,7 @@ const TestAccessForm = () => {
                 <h2 className="text-center text-white text-[20px] font-bold font-medium mb-2">
                     Access Your Assessment
                 </h2>
-                <h3 className='text-gray-400 m-1 text-[12px] text-center font-medium'>Enter the unique ID provided in your email to start your test</h3>
+                <h3 className='text-gray-400 m-1 text-[12px] mt-1 text-center font-medium'>Enter the unique ID provided in your email to start your test</h3>
                 <form onSubmit={formik.handleSubmit} className="flex flex-col items-center justify-center gap-4">
 
                     <CustomInput
