@@ -4,7 +4,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Footer = () => {
     return (
-        <footer className="bg-primary-200 py-4">
+        <footer className="bg-newCodes-foreground py-4">
             <div className="container mx-auto text-center text-sm text-gray-600">
                 <p className="text-white">
                     Powered by:{" "}
