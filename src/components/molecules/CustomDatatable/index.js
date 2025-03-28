@@ -150,7 +150,6 @@ const CustomDatatable = ({
                     textAlign: 'center',
                     minHeight:20  ,
                     maxHeight:40,
-                    paddingLeft:5
                 },
 
 
