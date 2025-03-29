@@ -54,7 +54,7 @@ const TestCasesInput = ({
                 {formik.values.testCases?.map((user, index) => (
                     <div className='flex items-start' key={index}>
 
-                        <div className="flex items-start flex-1">
+                        <div className="d-flex items-start flex-1 justify-between">
                             <span className='mt-7 mr-2'>{index + 1}.</span>
                             {/* Input Field */}
                             <div className="flex-1 pr-2">
@@ -92,7 +92,7 @@ const TestCasesInput = ({
 
                             {/* Remove Button */}
                             {formik.values.testCases.length > 4 && (
-                                <div className="flex justify-end mt-5">
+                                <div className="flex justify-end mt-4">
                                     <IconButton
                                         onClick={() => removeTestCase(index)}
                                         aria-label="Delete Test Case"

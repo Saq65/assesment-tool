@@ -75,7 +75,7 @@ const QuestionsDatatable = ({
   return (
     <>
       <Box sx={{ width: "100%" }}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider", }}>
           <CustomTabs
             tabs={tabs}
             value={selectedTab}
@@ -103,6 +103,7 @@ const QuestionsDatatable = ({
         deleteMutation={deleteMutation}
         setRefetchData={setRefetchData}
         moduleName={"question"}
+      
       />
     </>
   );

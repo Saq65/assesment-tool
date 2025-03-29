@@ -41,6 +41,38 @@ const Page = () => {
                             id="agree"
                             className="mr-2"
                             onChange={handleAgreeChange}
+                            onFocus={false}
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                color: "white",
+                                border: "1px solid #475569",
+                                padding: "4px 12px",
+                                borderRadius: "8px",
+                                cursor: "pointer",
+                                marginBottom: 2,
+                                marginLeft: 0,
+                                '&:hover': {
+                                  color: 'gray',
+                                  backgroundColor: 'transparent'
+                                },
+                                '&.Mui-checked': {
+                                  color: 'gray',
+                                },
+                                '&.Mui-checked:hover': {
+                                  color: 'gray',
+                                },
+                                '&.MuiButtonBase-root:hover': {
+                                  backgroundColor: 'gray',
+                                },
+                                '& .MuiSvgIcon-root': {
+                                  fontSize: 24,
+                                  color: 'gray',
+                                  '&:hover': {
+                                    color: 'yellow',
+                                  }
+                                },
+                              }}
                         />
                         <label htmlFor="agree" className="text-white cursor-pointer">
                             I agree to the terms and conditions.

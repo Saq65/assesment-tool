@@ -235,7 +235,7 @@ const RunTestCases = ({ code, language }) => {
 
     return (
         <>
-            <div className="sticky top-0 text-md font-semibold flex justify-between text-white p-2 border-b border-solid border-[#32394a] bg-primary-400">
+            <div className="sticky top-0 text-md font-semibold flex justify-between text-white p-2 border-b border-solid border-[#32394a] bg-newCodes-foreground">
                 <button>{!currentQuestion?.loading ? "Testcases" : "Running Testcases..."}</button>
                 <div className='flex gap-x-2'>
                     <button
@@ -251,7 +251,7 @@ const RunTestCases = ({ code, language }) => {
 
 
             <MuiBox sx={{ width: '100%' }}>
-                <MuiBox sx={{ borderBottom: 1, borderColor: 'divider', position: 'sticky', top: '42px', background: '#334155' }}>
+                <MuiBox sx={{ borderBottom: 1, borderColor: 'divider', position: 'sticky', top: '42px', background: '#343A40' }}>
                     <CustomTabs
                         tabs={tabs?.map((tab, index) => ({
                             ...tab,

@@ -49,7 +49,7 @@ const ProctoringScreenError = () => {
                         <p className="text-white mb-6">
                             Webcam and Microphone access permissions are required to proceed with this test.
                         </p>
-                        <div className="bg-primary-100 rounded-lg shadow-sm p-4 mb-6">
+                        <div className="bg-[#272C33] rounded-lg shadow-sm p-4 mb-6">
                             <h2 className="text-lg font-semibold text-white mb-3 text-left">Quick Fixes:</h2>
                             <ul className="text-white list-disc pl-5 text-left">
                                 <li>Follow the instructions shown on the left screen to allow the permissions</li>
@@ -59,7 +59,10 @@ const ProctoringScreenError = () => {
                             </ul>
                         </div>
                         <div className='flex justify-start'>
-                            <Button onClick={() => refreshPage(getTestIdFromSession())} className="bg-blue-600 text-white px-6 py-2 rounded-md shadow hover:bg-blue-700">
+                            <Button onClick={() => refreshPage(getTestIdFromSession())}
+                                style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                                onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                                className=" text-white px-6 py-2 rounded-md shadow hover:bg-gray-700">
                                 Refresh Browser
                             </Button>
                         </div>
@@ -100,7 +103,7 @@ const ProctoringScreenError = () => {
                             <Button
                                 onClick={() => refreshPage(getTestIdFromSession())}
                                 className="py-2 px-4 font-medium rounded-md hover:gray transition"
-                                style={{ backgroundColor: "#343A40", color: "#FFFFFF",cursor:'pointer'}}
+                                style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
                                 onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                             >
                                 Restart Test

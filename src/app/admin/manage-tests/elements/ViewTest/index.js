@@ -183,7 +183,7 @@ const DetailRow = ({ label, value, color, className }) => {
     return (
         <div className="flex flex-col gap-y-1">
             <p className="text-gray-300 font-semibold">{label}:</p>
-            <div className="flex justify-between gap-x-2 items-center bg-[#1D2126] p-4 rounded-md">
+            <div className="flex justify-between gap-x-2 items-center bg-[#1D2126] p-3 rounded-md">
 
                 <Tooltip title={value} arrow placement="top">
                     <p
@@ -200,7 +200,7 @@ const DetailRow = ({ label, value, color, className }) => {
 
 
 const StatusRow = ({ label, status }) => (
-    <div className="flex justify-between items-center bg-[#1D2126] p-4 rounded-md">
+    <div className="flex justify-between items-center bg-[#1D2126] p-3 rounded-md">
         <p className="text-gray-300 font-semibold">{label}:</p>
         <p className={status ? "text-green-500" : "text-red-500"}>
             {status ? "Yes" : "No"}

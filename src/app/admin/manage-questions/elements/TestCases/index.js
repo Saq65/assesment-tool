@@ -13,7 +13,7 @@ const TestCases = () => {
             {question?.testCases?.map((item, index) => {
                 return <div
                     key={index}
-                    className="bg-primary-400 text-gray-200 p-4 rounded-md flex flex-col"
+                    className="bg-[#1D2126] text-gray-200 p-4 rounded-md flex flex-col"
                 >
                     <h3 className='font-bold mb-3'>Case {index + 1}</h3>
                     <div className='flex flex-col gap-y-2'>

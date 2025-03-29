@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Dialog, DialogActions, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import CustomInput from '@/components/atoms/TextInput';
@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { experienceLevelsSelector, skillsSelector } from '@/store/features/questions/selectors';
 import { useSearchParams } from 'next/navigation';
 import Button from '@/components/atoms/Button';
+import { GridCloseIcon } from '@mui/x-data-grid';
 
 
 
@@ -66,8 +67,31 @@ const ImportModal = ({ openDialog, handleCloseDialog, handleImport }) => {
 
 
     return (
-        <Dialog open={openDialog} onClose={handleCloseDialog} sx={{ '& .MuiDialog-paper': { backgroundColor: '#1E293B', width: '400px' } }}>
-            <DialogTitle>Import Questions</DialogTitle>
+        <Dialog open={openDialog} onClose={handleCloseDialog}
+            sx={{ '& .MuiDialog-paper': { backgroundColor: '#1D2126', width: '400px' } }}
+            BackdropProps={{
+                sx: {
+                    backgroundColor: "rgba(0, 0, 0, 0.4)",
+                    backdropFilter: "blur(5px)",
+                },
+            }}
+        >
+
+            <DialogTitle className="text-white text-center font-semibold text-xl">
+                Import Questions
+                <IconButton
+                    aria-label="close"
+                    onClick={handleCloseDialog}
+                    sx={{
+                        position: "absolute",
+                        right: 8,
+                        top: 8,
+                        color: "white",
+                    }}
+                >
+                    <GridCloseIcon />
+                </IconButton>
+            </DialogTitle>
             <form onSubmit={formik.handleSubmit}>
                 <DialogContent sx={{ paddingTop: '10px !important' }}>
 
@@ -112,10 +136,19 @@ const ImportModal = ({ openDialog, handleCloseDialog, handleImport }) => {
                 </DialogContent>
 
                 <DialogActions>
-                    <Button onClick={handleCloseDialog} variant="secondary" size="small">
+                    <Button onClick={handleCloseDialog} variant="secondary"
+                        size="small"
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                        onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                        style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                    >
                         Cancel
                     </Button>
-                    <Button type="submit" variant="primary" size="small">
+                    <Button type="submit" variant="primary" size="small"
+                        onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                        onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                        style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                    >
                         Import
                     </Button>
                 </DialogActions>

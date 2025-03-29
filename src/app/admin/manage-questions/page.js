@@ -200,10 +200,17 @@ const ManaageQuestions = () => {
                     handleOpenDialogQuestion();
                   }}
                   size="small"
+                  onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                  onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                  style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
                 >
                   Add Question
                 </Button>
-                {selectedTab == "0" && <Button onClick={handleOpenDialogImport} size="small">
+                {selectedTab == "0" && <Button onClick={handleOpenDialogImport}
+                  onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+                  onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+                  style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                  size="small">
                   Import
                 </Button>}
               </div>

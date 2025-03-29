@@ -7,7 +7,18 @@ import { useDispatch } from "react-redux";
 export const columns = ({ handleOpenDialogDel, handleOpenDialogQuestion, selectedTab }) => {
 
     const columnsArray = [
-        { field: "question", headerName: "Question", flex: 1, disableColumnMenu: true, sortable: false, filterable: false, selectable: false },
+        {
+            field: "question", headerName: "Question", flex: 1, disableColumnMenu: true, sortable: false, filterable: false, selectable: false, renderCell: (params) => (
+                <span style={{
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    maxWidth: "600px",
+                    display: "block"
+                }} title={params.value}>
+                    {params.value}
+                </span>)
+        },
         { field: "answer", headerName: "Correct Option", width: 180, disableColumnMenu: true, sortable: false, filterable: false, selectable: false },
         {
             field: "createdAt", headerName: "Created At", width: 180, disableColumnMenu: true, sortable: false, filterable: false, selectable: false, renderCell: (params) => {

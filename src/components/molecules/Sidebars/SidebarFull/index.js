@@ -24,7 +24,7 @@ const SidebarFull = ({ isSidebarOpen, toggleSidebar }) => {
 
             <ul style={{rowGap:'0px'}} className="mr-[-10px] flex h-[90%] flex-col overflow-y-auto pr-[10px] transition-all duration-300 ease-in-out">
                 {sideBarData?.map((val, i) => (
-                    <li key={val?.label} className='px-3'>
+                    <li key={val?.label} className=''>
                         <Link
                             href={val.route}
                             className={`nav-link flex items-center text-newCodes-sideLinks justify-start gap-2 rounded-lg px-3 py-3 transition duration-[0.4s] hover:text-newCodes-sideLinksHover ${isActive(val.routeName) ? "text-newCodes-sideLinksActive" : ""}`}

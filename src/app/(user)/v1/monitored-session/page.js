@@ -115,7 +115,7 @@ const Page = () => {
 
                 {/* Button */}
                 <Button id="proceed-btn"
-                    className="w-full py-2 text-white font-semibold rounded hover:bg-blue-700 transition"
+                    className="w-full py-2 text-white font-semibold rounded-5 hover:bg-gray-700 transition"
                     onClick={startTest}
                     style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
                     onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}

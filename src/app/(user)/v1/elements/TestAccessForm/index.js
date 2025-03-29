@@ -115,7 +115,7 @@ const TestAccessForm = () => {
 
                     />
                     <Button type="submit" disabled={formik.isSubmitting || !formik.values.loginCode.trim()} endIcon={
-                        formik.isSubmitting ? <CircularProgress size="1rem" /> : null
+                        formik.isSubmitting ? <CircularProgress color='#fff' size="1rem" /> : null
                     }
                         style={{ backgroundColor: "#343A40", color: "#FFFFFF",cursor:'pointer'}}
                         onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}

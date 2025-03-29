@@ -9,7 +9,7 @@ const Skills = () => {
     const skills = useSelector(skillsSelector);
 
     return (
-        <div className='mt-4 bg-primary-200 p-6'>
+        <div className='mt-4 bg-newCodes-foreground p-6'>
             {skills?.length == 0 ? (
                 <div className="text-center text-gray-500">
                     <h3 className="text-lg font-semibold">No Skills Available</h3>

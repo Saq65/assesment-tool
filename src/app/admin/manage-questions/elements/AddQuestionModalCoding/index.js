@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
+  IconButton,
 } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -20,6 +22,7 @@ import Button from "@/components/atoms/Button";
 import TestCasesInput from "@/components/atoms/TestCasesInput";
 import { CONSTANTS } from "@/constants";
 import { initialTestCases } from "@/utils";
+import { GridCloseIcon } from "@mui/x-data-grid";
 const { PROGRAMMING_LANGUAGES } = CONSTANTS
 const AddQuestionModalCoding = ({
   openDialog,
@@ -172,17 +175,37 @@ const AddQuestionModalCoding = ({
     <Dialog
       open={openDialog}
       onClose={handleCloseDialog}
+      BackdropProps={{
+        sx: {
+          backgroundColor: "rgba(0, 0, 0, 0.4)",
+          backdropFilter: "blur(5px)",
+        },
+      }}
       sx={{
         "& .MuiDialog-paper": {
-          backgroundColor: "#1E293B",
+          backgroundColor: "#1D2126",
           minWidth: "400px",
           overflow: "hidden",
         },
       }}
     >
-      <h3 className="text-[18px] leading-6 px-6 py-5 font-bold">
-        {editItem ? "Edit" : "Add"} Question Coding
-      </h3>
+      <DialogTitle className="text-white flex items-center text-center font-semibold text-xl">
+        <h3 className="text-[18px] leading-6 px-6 py-2 font-bold">
+          {editItem ? "Edit" : "Add"} Question Coding
+        </h3>
+        <IconButton
+          aria-label="close"
+          onClick={handleCloseDialog}
+          sx={{
+            position: "absolute",
+            right: 8,
+            color: "white",
+          }}
+        >
+          <GridCloseIcon />
+        </IconButton>
+      </DialogTitle>
+
       <form
         onSubmit={formik.handleSubmit}
         style={{ display: "flex", flexDirection: "column", height: "100%" }}
@@ -192,9 +215,9 @@ const AddQuestionModalCoding = ({
             paddingTop: "10px !important",
             flexGrow: 1,
             overflowY: "auto",
-            maxHeight: "calc(100vh - 160px)",
+            maxHeight: "calc(100vh - 300px)",
             paddingBottom: 5,
-            scrollBehavior: "smooth"
+            scrollBehavior: "smooth",
           }}
           ref={scrollableContentRef}
         >
@@ -253,12 +276,6 @@ const AddQuestionModalCoding = ({
             rows={10}
           />
 
-
-
-
-
-
-
           {/* Duration */}
           <CustomInput
             name="duration"
@@ -279,15 +296,23 @@ const AddQuestionModalCoding = ({
 
           <TestCasesInput formik={formik} scrollableContentRef={scrollableContentRef} />
         </DialogContent>
-        <div className="sticky bottom-0 bg-[#1E293B] z-10 flex justify-end px-6 py-5 gap-x-2">
+        <div className="sticky bottom-0 bg-[#1D2126] z-10 flex justify-end px-6 py-5 gap-x-2">
           <Button
             onClick={handleCloseDialog}
             variant="secondary"
             size="small"
+            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+            onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+            style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
           >
             Cancel
           </Button>
-          <Button type="submit" variant="primary" size="small">
+          <Button type="submit" variant="primary"
+            onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+            onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
+            style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+            size="small"
+          >
             {editItem ? "Update Question" : "Add Question"}
           </Button>
         </div>

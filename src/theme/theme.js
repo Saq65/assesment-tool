@@ -360,17 +360,17 @@ export const DarkSpacesTheme = createTheme({
       },
     },
 
-   
+
 
     MuiCircularProgress: {
       styleOverrides: {
         root: {
-          backgroundColor: "#1E293B", // Change background color of parent div
+          backgroundColor: "#ffffff", // Change background color of parent div
           borderRadius: "50%", // Optional: Make it circular
           padding: "10px", // Optional: Add spacing around it
         },
         circle: {
-          stroke: "#fff", // Custom stroke color
+          stroke: "#272C33", // Custom stroke color
         },
       },
     },
@@ -591,28 +591,49 @@ export const DarkSpacesTheme = createTheme({
             backgroundColor: "rgba(125, 211, 252, 0.1)",
           },
           "&.Mui-focusVisible": {
-            outline: "2px solid black", // Focus ring
+            outline: "2px solid black",
           },
         },
       },
     },
     MuiCheckbox: {
+
       styleOverrides: {
         root: {
-          color: "#374151",
-          // backgroundColor:'#000',
+          color: "#374151", // Default/unchecked color
           "&.Mui-checked": {
-            color: "#808080",
-            backgroundColor: '#343A40'
+            color: "#7DD3FC", // Checked color
+            backgroundColor: "rgba(125, 211, 252, 0.1)",
           },
           "&:hover": {
-            color: "#808080",
-            backgroundColor: "#272C33",
+            color: "#7DD3FC", // Hover effect
+            backgroundColor: "rgba(125, 211, 252, 0.1)",
           },
           "&.Mui-focusVisible": {
-            outline: "2px solid #fff",
+            outline: "2px solid black",
           },
-        },
+          '&:hover': {
+            color: 'gray',
+            // backgroundColor: 'transparent'
+            outlineColor: 'red'
+          },
+          '&.Mui-checked': {
+            color: 'gray',
+          },
+          '&.Mui-checked:hover': {
+            color: 'gray',
+          },
+          '&.MuiButtonBase-root:hover': {
+            backgroundColor: 'transparent',
+          },
+          '& .MuiSvgIcon-root': {
+            fontSize: 24,
+            color: 'gray',
+            '&:hover': {
+              color: 'yellow',
+            }
+          },
+        }
       },
     },
     MuiFormControlLabel: {
@@ -624,8 +645,8 @@ export const DarkSpacesTheme = createTheme({
           },
         },
         label: {
-          color:'#FFFFFFB3',
-          fontSize:'12px',
+          color: '#FFFFFFB3',
+          fontSize: '12px',
           "&:hover": {
             // color: '#7DD3FC', // Hover effect on the label itself
           },

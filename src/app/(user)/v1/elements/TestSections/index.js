@@ -41,6 +41,7 @@ const TestSections = ({ canProceed }) => {
                 MCQ - {user?.questions || user?.questionsLength} Questions
               </Typography>
             }
+
             sx={{
               display: "flex",
               alignItems: "center",
@@ -51,14 +52,32 @@ const TestSections = ({ canProceed }) => {
               cursor: "pointer",
               marginBottom: 2,
               marginLeft: 0,
-              "&:hover": {
-                color: "#000",
+              '&:hover': {
+                color: 'gray',
+                backgroundColor: 'transparent'
+              },
+              '&.Mui-checked': {
+                color: 'gray',
+              },
+              '&.Mui-checked:hover': {
+                color: 'gray',
+              },
+              '&.MuiButtonBase-root:hover': {
+                backgroundColor: 'gray',
+              },
+              '& .MuiSvgIcon-root': {
+                fontSize: 24,
+                color: 'gray',
+                '&:hover': {
+                  color: 'yellow',
+                }
               },
             }}
           />
           <FormControlLabel
             value={TEST_SECTIONS.PROGRAM}
             control={<Radio sx={{ color: "white" }} />}
+            autoFocus={false}
             label={
               <Typography sx={{ fontWeight: "bold", color: "white" }}>
                 Code - {user?.programs} Questions
@@ -74,8 +93,25 @@ const TestSections = ({ canProceed }) => {
               cursor: "pointer",
               marginBottom: 2,
               marginLeft: 0,
-              "&:hover": {
-                color: "#000",
+              '&:hover': {
+                color: 'gray',
+                backgroundColor: 'transparent'
+              },
+              '&.Mui-checked': {
+                color: 'gray',
+              },
+              '&.Mui-checked:hover': {
+                color: 'gray',
+              },
+              '&.MuiButtonBase-root:hover': {
+                backgroundColor: 'gray',
+              },
+              '& .MuiSvgIcon-root': {
+                fontSize: 24,
+                color: 'gray',
+                '&:hover': {
+                  color: 'yellow',
+                }
               },
             }}
           />
@@ -94,6 +130,9 @@ const TestSections = ({ canProceed }) => {
             dispatch(setIsFullScreen(true));
             router.push("/v1/monitored-session");
           }}
+          style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")}
         >
           Start Test
         </Button>

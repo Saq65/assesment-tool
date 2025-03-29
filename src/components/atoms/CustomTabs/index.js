@@ -25,6 +25,7 @@ const CustomTabs = ({ tabs, value, onChange, type }) => {
                     height: "35px", // Set the height of the outer container
                     minHeight: "35px",
                     paddingLeft: "11px",
+                    background:'#343A40',
                     '& .MuiTabs-indicator': {
                         display: 'none', // Removes the underline
                     },
@@ -52,8 +53,8 @@ const CustomTabs = ({ tabs, value, onChange, type }) => {
                             padding: '4px 12px',     // Reduced padding to make the tab smaller
                             minHeight: '35px',       // Set minimum height for the tab button
                             '&.Mui-selected': {
-                                backgroundColor: '#7ddcfc', // Background color for the active tab
-                                color: 'black',          // Text color for the active tab
+                                backgroundColor: '#343A40', // Background color for the active tab
+                                color: '#fff',          // Text color for the active tab
                             },
                             '&:not(.Mui-selected)': {
                                 backgroundColor: 'transparent', // Non-selected tab has no background
@@ -77,7 +78,7 @@ const CustomTabs = ({ tabs, value, onChange, type }) => {
             scrollButtons="auto"
             sx={{
                 '& .MuiTabs-indicator': {
-                    display: 'none', // Removes the underline
+                    display: 'none', 
                 },
             }}
         >
@@ -95,8 +96,8 @@ const CustomTabs = ({ tabs, value, onChange, type }) => {
                         // minHeight: '30px',         // Set minimum height of the tab button to 30px
                         // fontSize: '12px',          // Smaller font size
                         '&.Mui-selected': {
-                            backgroundColor: '#7ddcfc', // Background color for the active tab
-                            color: 'black',          // Text color for the active tab
+                            backgroundColor: '#343A40', // Background color for the active tab
+                            color: '#fff',          // Text color for the active tab
                         },
                         '&:not(.Mui-selected)': {
                             backgroundColor: 'transparent', // Non-selected tab has no background

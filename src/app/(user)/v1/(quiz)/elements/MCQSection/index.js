@@ -68,14 +68,14 @@ const MCQSection = () => {
     return (
         <div className="flex-1 p-6 bg-[#272C33] overflow-y-auto  border rounded-lg border-solid border-primary-400"
             style={{
-                height: testState?.testInfo?.sectionsCount == 2 ? 'calc(100vh - 230px)' : 'calc(100vh - 200px)'
+                height: testState?.testInfo?.sectionsCount == 2 ? 'calc(100vh - 260px)' : 'calc(100vh - 200px)'
             }}
         >
             <div className="flex flex-col h-full">
                 <div className="text-lg font-semibold mb-4 flex justify-between items-center">
                     <span className="text-white">Select an option</span>
                     <button
-                        className="text-blue-300 text-sm mt-auto self-end"
+                        className="text-white text-sm mt-auto self-end"
                         onClick={() => {
                             dispatch(clearResponse({ socket }));
                         }}
@@ -115,17 +115,34 @@ const MCQSection = () => {
                                     sx={{
                                         display: "flex",
                                         alignItems: "center",
-                                        color: "white", // Text color
-                                        border: `1px solid ${isSelected ? "#fff" : "gray"}`, 
+                                        color: "white",
+                                        border: "1px solid #475569",
                                         padding: "4px 12px",
                                         borderRadius: "8px",
                                         cursor: "pointer",
                                         marginBottom: 2,
-                                        "&:hover": {
-                                            color: "#000", 
-                                            backgroundColor:'#272C33'
+                                        marginLeft: 0,
+                                        '&:hover': {
+                                          color: 'gray',
+                                          backgroundColor: 'transparent'
                                         },
-                                    }}
+                                        '&.Mui-checked': {
+                                          color: 'gray',
+                                        },
+                                        '&.Mui-checked:hover': {
+                                          color: 'gray',
+                                        },
+                                        '&.MuiButtonBase-root:hover': {
+                                          backgroundColor: 'gray',
+                                        },
+                                        '& .MuiSvgIcon-root': {
+                                          fontSize: 24,
+                                          color: 'gray',
+                                          '&:hover': {
+                                            color: 'yellow',
+                                          }
+                                        },
+                                      }}
                                 />
                             );
                         })}

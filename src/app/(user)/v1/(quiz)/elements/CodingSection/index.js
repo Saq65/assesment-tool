@@ -58,7 +58,7 @@ export default function CodingSection() {
                     </div>
                 </Panel>
                 <PanelResizeHandle>
-                    <div className="relative bg-primary-100 justify-center h-2 flex items-center">
+                    <div className="relative  justify-center h-2 flex items-center">
                         <svg className="absolute w-4 h-4 text-white" viewBox="0 0 24 24">
                             <path
                                 fill="currentColor"

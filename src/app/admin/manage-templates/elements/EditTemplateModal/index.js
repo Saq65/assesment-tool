@@ -251,19 +251,75 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                         {/* Skills Selection Section */}
                         <Grid item xs={12}>
                             <fieldset onBlur={() => formik.setFieldTouched("skills")} className='border max-h-[300px] p-4 overflow-y-auto rounded-lg ' style={{
-                                borderColor: formik?.errors?.skills && formik?.touched?.skills ? "#FF1943" : "#ffffff3b"
-                            }}>
+                                borderColor: formik?.errors?.skills && formik?.touched?.skills ? "#FF1943" : "#ffffff3b",
+                                outline: "none !important"
+                            }}
+                                tabIndex="-1"
+                            >
                                 <legend style={{ color: formik?.errors?.skills && formik?.touched?.skills ? "#FF1943" : "#ffffff" }} className=' !text-[#FFFFFFB3] !text-[12px]'>Choose Skills for MCQ's *</legend>
 
                                 {skillsList?.map((skill) => {
 
                                     return <div key={getSkillName(skill.name)} className="flex flex-col justify-between">
+                                        {/* <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    name={getSkillName(skill.name)}
+                                                    checked={selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill))}
+                                                    onChange={handleCheckboxChange}
+                                                    disableRipple
+                                                    disableFocusRipple
+                                                    TouchRippleProps={{ style: { color: 'gray' } }}
+                                                    autoFocus={false}
+                                                    sx={{
+                                                        color: "gray",
+                                                        "&:hover": {
+                                                            color: "gray",
+                                                        },
+                                                        "&.Mui-checked": {
+                                                            color: "gray",
+                                                        },
+                                                        "&.Mui-checked:hover": {
+                                                            color: "gray",
+                                                        },
+                                                        "&.MuiButtonBase-root:hover": {
+                                                            border: "none !important",
+                                                        },
+                                                        "&.Mui-focusVisible": {  // Remove focus outline
+                                                            outline: "none !important",
+                                                            boxShadow: "none",
+                                                        },
+                                                        "&.MuiCheckbox-root:focus": {  // Remove focus outline
+                                                            outline: "none !important",
+                                                            boxShadow: "none",
+                                                        },
+                                                        "&.MuiCheckbox-root:focus-visible": {  // Remove focus visible effect
+                                                            outline: "none",
+                                                            boxShadow: "none",
+                                                        },
+                                                        "&.MuiButtonBase-root:focus": {  // Remove button focus styles
+                                                            outline: "none !important",
+                                                            boxShadow: "none",
+                                                        },
+                                                        "&.MuiButtonBase-root:focus-visible": {
+                                                            outline: "none",
+                                                            boxShadow: "none",
+                                                        },
+                                                    }}
+
+                                                    value={getSkillId(skill)}
+                                                    defaultChecked={Boolean(selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill)))}
+                                                />
+                                            }
+                                            label={getSkillName(skill)}
+                                        /> */}
                                         <FormControlLabel
                                             control={
                                                 <Checkbox
                                                     name={getSkillName(skill.name)}
                                                     checked={selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill))}
                                                     onChange={handleCheckboxChange}
+                                                    autoFocus={false}
                                                     disableRipple
                                                     TouchRippleProps={{ style: { color: 'gray' } }}
                                                     sx={{
@@ -271,6 +327,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                         '&:hover': {
                                                             color: 'gray',
                                                             // backgroundColor: 'transparent'
+                                                            outlineColor: 'red'
                                                         },
                                                         '&.Mui-checked': {
                                                             color: 'gray',
@@ -279,15 +336,15 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                             color: 'gray',
                                                         },
                                                         '&.MuiButtonBase-root:hover': {
-                                                            backgroundColor: 'grau',
+                                                            backgroundColor: 'transparent',
                                                         },
-                                                        // '& .MuiSvgIcon-root': {
-                                                        //     fontSize: 24,
-                                                        //     color: 'gray',
-                                                        //     '&:hover': {
-                                                        //         color: 'yellow',
-                                                        //     }
-                                                        // },
+                                                        '& .MuiSvgIcon-root': {
+                                                            fontSize: 24,
+                                                            color: 'gray',
+                                                            '&:hover': {
+                                                                color: 'yellow',
+                                                            }
+                                                        },
                                                     }}
                                                     value={getSkillId(skill)}
                                                     defaultChecked={Boolean(selectedSkills?.find((item) => getSkillId(item) == getSkillId(skill)))}
@@ -318,13 +375,13 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                             color: 'gray',
                                                         },
                                                         '&.MuiButtonBase-root:hover': {
-                                                            backgroundColor: 'grau',
+                                                            backgroundColor: 'gray',
                                                         },
                                                         '& .MuiSvgIcon-root': {
                                                             fontSize: 24,
                                                             color: 'gray',
                                                             '&:hover': {
-                                                                color: 'yellow',
+                                                                color: '#fff',
                                                             }
                                                         },
                                                     }}
@@ -355,7 +412,8 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                         {/*  Program Skills Selection Section */}
                         <Grid item xs={12}>
                             <fieldset onBlur={() => formik.setFieldTouched("programSkillLevelPairs")} className='border max-h-[260px] p-4 overflow-y-auto rounded-lg ' style={{
-                                borderColor: formik?.errors?.programSkillLevelPairs && formik?.touched?.programSkillLevelPairs ? "#FF1943" : "#ffffff3b"
+                                borderColor: formik?.errors?.programSkillLevelPairs && formik?.touched?.programSkillLevelPairs ? "#FF1943" : "#ffffff3b",
+
                             }}>
                                 <legend style={{ color: formik?.errors?.programSkillLevelPairs && formik?.touched?.programSkillLevelPairs ? "#FF1943" : "#ffffff" }} className='text-sm !text-[#FFFFFFB3] !text-[12px]'>Choose Skills for Coding Round</legend>
                                 {skillsList.map((skill, i) => (
@@ -366,6 +424,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                     name={getSkillName(skill.name)}
                                                     checked={selectedProgramSkills?.find((item) => getSkillId(item) == getSkillId(skill))}
                                                     onChange={handleCheckboxChangeProgramSkills}
+                                                    autoFocus={false}
                                                     disableRipple
                                                     TouchRippleProps={{ style: { color: 'gray' } }}
                                                     sx={{
@@ -373,6 +432,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                         '&:hover': {
                                                             color: 'gray',
                                                             // backgroundColor: 'transparent'
+                                                            outlineColor: 'red'
                                                         },
                                                         '&.Mui-checked': {
                                                             color: 'gray',
@@ -381,7 +441,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                             color: 'gray',
                                                         },
                                                         '&.MuiButtonBase-root:hover': {
-                                                            backgroundColor: 'grau',
+                                                            backgroundColor: 'transparent',
                                                         },
                                                         '& .MuiSvgIcon-root': {
                                                             fontSize: 24,
@@ -410,7 +470,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                         color: 'gray',
                                                         '&:hover': {
                                                             color: 'gray',
-                                                            // backgroundColor: 'transparent'
+                                                            backgroundColor: 'transparent'
                                                         },
                                                         '&.Mui-checked': {
                                                             color: 'gray',
@@ -419,7 +479,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                             color: 'gray',
                                                         },
                                                         '&.MuiButtonBase-root:hover': {
-                                                            backgroundColor: 'grau',
+                                                            backgroundColor: 'gray',
                                                         },
                                                         '& .MuiSvgIcon-root': {
                                                             fontSize: 24,

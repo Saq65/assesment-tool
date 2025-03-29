@@ -21,7 +21,10 @@ const NotFound = () => {
                 </p>
                 <Button
                     onClick={handleGoBack}
-                    className="px-8 py-4 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 transition-all"
+                    className="px-8 py-4 text-white rounded-lg shadow-md hover:bg-gray-700 transition-all"
+                    style={{ backgroundColor: "#272C33", color: "#FFFFFF" }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")} 
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#272C33")} 
                 >
                     Go back
                 </Button>

@@ -47,6 +47,8 @@ const CustomSelect = ({
         disableRipple 
    
         sx={{
+          borderRadius:'80px'
+          ,
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor: 'gray', 
           },
@@ -66,7 +68,7 @@ const CustomSelect = ({
           <MenuItem
             value={option?.id || option?.skillId || option?.levelId}
             key={option?.id}
-
+         
           >
             {option?.name ||
               option?.title ||

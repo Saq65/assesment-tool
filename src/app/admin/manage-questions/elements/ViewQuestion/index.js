@@ -35,7 +35,7 @@ const ViewQuestion = (
     return (
         <>
             <div className=''>
-                <Card style={{ margin: '20px auto', backgroundColor: '#2D3748', color: '#FFFFFF', borderRadius: '8px', width: '100%' }}>
+                <Card style={{ margin: '20px auto', backgroundColor: '#272C33', color: '#FFFFFF', borderRadius: '8px', width: '100%' }}>
 
                     {/* View for MCQ Question */}
                     {(question?.type == CONSTANTS.QUESTION_TYPES.QUESTION || question?.type == null) && <CardContent>
@@ -81,9 +81,10 @@ const ViewQuestion = (
                                                 style={{
                                                     padding: '8px',
                                                     borderRadius: '4px',
-                                                    backgroundColor: choice === question?.answer ? '#2D3748' : 'transparent',
+                                                    backgroundColor: choice === question?.answer ? '#1D2126' : 'transparent',
                                                     color: choice === question?.answer ? '#48BB78' : '#FFFFFF',
                                                     whiteSpace: 'pre-wrap',
+                                                    border: choice === question?.answer ?'0.2px solid #ffffff':"",
                                                 }}
                                             >
                                                 {choice}: {question?.choices[index]}
