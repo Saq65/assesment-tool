@@ -155,7 +155,7 @@ const CustomDatatable = ({
 
                 '& .MuiDataGrid-columnHeaderTitleContainer': {
                     display: 'flex',
-                    justifyContent: 'center',
+                    justifyContent: 'left',
                     alignItems: 'center',
                     flexGrow: 1,
                 },
@@ -168,7 +168,7 @@ const CustomDatatable = ({
 
                 '& .MuiDataGrid-cell': {
                     display: 'flex',
-                    justifyContent: 'center',
+                    justifyContent: 'left',
                     alignItems: 'center',
                     textAlign: 'center',
                 },
