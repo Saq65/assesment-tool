@@ -256,7 +256,7 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                             }}
                                 tabIndex="-1"
                             >
-                                <legend style={{ color: formik?.errors?.skills && formik?.touched?.skills ? "#FF1943" : "#ffffff" }} className=' !text-[#FFFFFFB3] !text-[12px]'>Choose Skills for MCQ's *</legend>
+                                <legend style={{ color: formik?.errors?.skills && formik?.touched?.skills ? "#FF1943" : "#ffffff",fontWeight:'500' ,fontSize:'0.7rem'}} className=' '>Choose Skills for MCQ's *</legend>
 
                                 {skillsList?.map((skill) => {
 
@@ -351,6 +351,12 @@ const EditTemplateModal = ({ openDialog, handleCloseDialog, handleEditTemplate }
                                                 />
                                             }
                                             label={getSkillName(skill)}
+                                            sx={{
+                                                fontSize: '0.6rem', // Increase label text size
+                                                fontWeight: '500', // Make label bold
+                                                color: '#ffffff', // White text for better visibility
+                                             
+                                              }}
                                         />
                                         {/* {selectedSkills?.find((item) => item?.skillId == getSkillId(skill?.id)) && ( */}
                                         {selectedSkills?.find((item) => item?.skillId == getSkillId(skill)) && (

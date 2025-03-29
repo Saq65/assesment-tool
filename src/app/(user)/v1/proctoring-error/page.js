@@ -27,7 +27,9 @@ const ProctoringError = () => {
                 </p>
                 <Button
                     onClick={() => refreshPage(getTestIdFromSession())}
-                    className="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition"
+                    className="px-6 py-3 text-white font-medium rounded-md hover:bg-gray-700 transition"
+                    style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}
                 >
                     Restart Test
                 </Button>

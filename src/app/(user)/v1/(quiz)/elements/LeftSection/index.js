@@ -18,7 +18,8 @@ const LeftSection = () => {
     <div
       className="flex-1 border rounded-lg border-solid border-primary-400 p-6 text-white bg-[#272C33] "
       style={{
-        height: testState?.testInfo?.sectionsCount == 2 ? 'calc(100vh - 230px)' : 'calc(100vh - 200px)'
+        height: testState?.testInfo?.sectionsCount == 2 ? 'calc(100vh - 230px)' : 'calc(100vh - 200px)',
+        overflowY:'scroll'
       }}
     >
       <div className="flex flex-col h-full">

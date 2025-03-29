@@ -90,7 +90,7 @@ const TestCompletionPage = () => {
                         <Button
                             disabled={!feedback?.trim()}
                             onClick={handleSubmitFeedback}
-                            className={`w-full`}
+                            className={`w-full  hover:bg-gray-500`}
                             variant='primary'
                             style={{ backgroundColor: "#343A40", color: "#FFFFFF", cursor: 'pointer' }}
                             onMouseEnter={(e) => (e.target.style.backgroundColor = "#343A40")}

@@ -23,11 +23,11 @@ const PermissionCheck = ({
       <td className={`py-2 ${statusStyles[status]}`}>
         <div className="flex gap-x-2 justify-start">
           <div className="flex flex-col">
-            <div className="flex items-center justify-center   text-white rounded-full mt-1">
+            <div className="flex items-center justify-center   text-white rounded-full ">
               {status === "completed" ? (
                 "✓"
               ) : status === "loading" ? (
-                <CircularProgress size={18} />
+                <CircularProgress size={26} />
               ) : (
                 "⏳"
               )}

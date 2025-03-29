@@ -60,12 +60,29 @@ const QuestionTypeSwitch = () => {
                             padding: "4px 12px",
                             borderRadius: "8px",
                             cursor: "pointer",
-                            marginBottom: 0,
+                            marginBottom: 2,
                             marginLeft: 0,
-                            "&:hover": {
-                                color: "#000",
+                            '&:hover': {
+                              color: 'gray',
+                              backgroundColor: 'transparent'
                             },
-                        }}
+                            '&.Mui-checked': {
+                              color: 'gray',
+                            },
+                            '&.Mui-checked:hover': {
+                              color: 'gray',
+                            },
+                            '&.MuiButtonBase-root:hover': {
+                              backgroundColor: 'gray',
+                            },
+                            '& .MuiSvgIcon-root': {
+                              fontSize: 24,
+                              color: 'gray',
+                              '&:hover': {
+                                color: 'yellow',
+                              }
+                            },
+                          }}
                     />
                 ))}
             </RadioGroup>

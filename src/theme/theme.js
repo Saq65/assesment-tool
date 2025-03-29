@@ -365,15 +365,17 @@ export const DarkSpacesTheme = createTheme({
     MuiCircularProgress: {
       styleOverrides: {
         root: {
-          backgroundColor: "#ffffff", // Change background color of parent div
-          borderRadius: "50%", // Optional: Make it circular
-          padding: "10px", // Optional: Add spacing around it
+          backgroundColor: "trasparent", // Keep background transparent
+          borderRadius: "50%",
+          padding: "10px",
         },
         circle: {
-          stroke: "#272C33", // Custom stroke color
+          stroke: "#ffffff", // Ensure stroke color is white
+          strokeWidth: 5, // Increase stroke thickness for visibility
         },
       },
     },
+
 
     // MuiBackdrop: {
     //     styleOverrides: {
@@ -645,8 +647,9 @@ export const DarkSpacesTheme = createTheme({
           },
         },
         label: {
-          color: '#FFFFFFB3',
-          fontSize: '12px',
+          color: '#ffffff',
+          fontSize: '0.7rem',
+          fontWeight: '500',
           "&:hover": {
             // color: '#7DD3FC', // Hover effect on the label itself
           },

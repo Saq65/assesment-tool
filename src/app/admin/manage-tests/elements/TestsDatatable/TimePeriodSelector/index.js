@@ -1,15 +1,10 @@
 import { CONSTANTS } from '@/constants';
-import { Autocomplete, TextField, Checkbox } from '@mui/material';
-import React, { useState } from 'react';
+import { Autocomplete, TextField } from '@mui/material';
+import React from 'react';
 
 const { TIME_PERIOD_VALUES } = CONSTANTS;
 
-const TimePeriodSelector = ({
-    timePeriodValue,
-    setTimePeriodValue
-}) => {
-
-
+const TimePeriodSelector = ({ timePeriodValue, setTimePeriodValue }) => {
     const options = [
         { label: "Today", value: TIME_PERIOD_VALUES.TODAY },
         { label: "Yesterday", value: TIME_PERIOD_VALUES.YESTERDAY },
@@ -20,38 +15,38 @@ const TimePeriodSelector = ({
 
     return (
         <Autocomplete
-            // multiple
             options={options}
             getOptionLabel={(option) => option?.label}
-            value={timePeriodValue ? timePeriodValue : undefined}
+            value={timePeriodValue || null}
             onChange={(event, newValue) => {
-                setTimePeriodValue(newValue)
+                setTimePeriodValue(newValue);
             }}
             renderInput={(params) => (
-                <TextField
-                    {...params}
-                    label="Select Values"
-                    variant="outlined"
-                    size="small"
-                    sx={{
-                        '& .MuiOutlinedInput-root.MuiInputBase-sizeSmall': {
-                            paddingLeft: '15px',
-                            fontSize: '14px',
-                        },
-                    }}
-                    slotProps={{
-                        input: {
-                            ...params.InputProps,
-                            startAdornment: timePeriodValue?.length > 0
-                                ? `${timePeriodValue?.length} selected`
-                                : "",
-                        },
-                    }}
-                />
+                <TextField {...params} label="Select Values" size="small" />
             )}
-            sx={{
-                minWidth: 150,
-                width: '100%',
+            componentsProps={{
+                paper: {
+                    sx: {
+                        backgroundColor: '#272C33', // Background color of dropdown
+                        color: 'white', // White text
+                    },
+                },
+                listbox: {
+                    sx: {
+                        '& .MuiAutocomplete-option': {
+                            backgroundColor: '#272C33 !important', // Default background (prevent blue)
+                            color: 'white',
+                            transition: 'background-color 0.2s ease-in-out',
+                            '&:hover': {
+                                backgroundColor: 'gray !important', // Gray on hover
+                            },
+                            '&[aria-selected="true"]': {
+                                backgroundColor: 'gray !important', // Gray when selected
+                                color: 'white',
+                            },
+                        },
+                    },
+                },
             }}
         />
     );

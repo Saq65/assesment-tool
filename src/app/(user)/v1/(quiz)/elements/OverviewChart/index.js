@@ -47,7 +47,7 @@ const OverviewChart = () => {
             `&nbsp;Unattempted`,
             `&nbsp;Revisit Later`
         ],
-        colors: ['green', '#DC2626', '#F97316'],
+        colors: ['#00b300', '#DC2626', '#F97316'],
         legend: {
             show: false,
             fontSize: '16px',

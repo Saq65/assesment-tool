@@ -109,7 +109,7 @@ const CustomDatatable = ({
 
     console.log(rowSelectionModel, "role selection models")
 
-    const newLocal = <div style={{ maxHeight: 600, minHeight: 500, width: "100%", overflowY: "scroll", paddingRight: "10px", backgroundColor: '#272C33' }}>
+    const newLocal = <div style={{ maxHeight: 600, minHeight: 500, width: "100%", height: "100%", overflowY: "scroll", paddingRight: "10px", backgroundColor: '#272C33' }}>
         <DataGrid
             resizeThrottleMs={0}
             rows={rows}
@@ -136,20 +136,19 @@ const CustomDatatable = ({
             sx={{
                 transition: 'all 1s ease',
                 minHeight: 500,
-                border: "1px solid rgba(255, 255, 255, 0.2) !important", 
-                width:'100% !important',
+                height: '100%',
+                border: "1px solid rgba(255, 255, 255, 0.2) !important",
+                width: '100% !important',
                 '& .MuiDataGrid-columnHeader': {
                     backgroundColor: '#343A40 !important',
                     color: '#94A3B8',
                     fontSize: "14px",
                     fontWeight: 500,
-                    lineHeight: 10,
+                    lineHeight: 20,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     textAlign: 'center',
-                    minHeight:20  ,
-                    maxHeight:40,
                 },
 
 
@@ -189,21 +188,21 @@ const CustomDatatable = ({
                     visibility: 'hidden',
                 },
                 '& .MuiDataGrid-root': {
-                    border: 'none !important', 
-                    boxShadow: 'none !important', 
+                    border: 'none !important',
+                    boxShadow: 'none !important',
                 },
                 '& .MuiDataGrid-cell:focus': {
                     outline: 'none',
-                    borderColor: 'none', 
+                    borderColor: 'none',
                 },
                 '& .MuiDataGrid-cell:focus-within': {
-                    outline: 'none', 
-                    borderColor: 'none', 
+                    outline: 'none',
+                    borderColor: 'none',
                 },
 
                 '& .MuiDataGrid-columnHeader:focus': {
-                    outline: 'none', 
-                    borderColor: 'none', 
+                    outline: 'none',
+                    borderColor: 'none',
                 },
                 '& .MuiDataGrid-row.Mui-selected': {
                     background: "#343A40"
@@ -211,12 +210,21 @@ const CustomDatatable = ({
                 '& .MuiDataGrid-row.Mui-selected:hover': {
                     background: "#343A40"
                 },
-            
-                  
+
+
             }}
             slots={{
                 noRowsOverlay: () => (
-                    <div className="w-full h-full flex justify-center items-center bg-[#1D2126]">
+                    <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        height: "100%", // Ensure it takes full height
+                        minHeight: "500px", // Match DataGrid's min height
+                        width: "100%",
+                        backgroundColor: "#1D2126",
+                    }}
+                        className="w-full h-full flex justify-center items-center bg-[#1D2126]">
                         <p className="text-white text-md">{!pagination?.loading && "No records"}</p>
                     </div>
                 ),

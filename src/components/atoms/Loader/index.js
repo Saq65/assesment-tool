@@ -14,7 +14,7 @@ const Loader = () => {
             alignItems="center"
             justifyContent="center"
         >
-            <CircularProgress size={64} disableShrink thickness={3} sx={{ color: "#60A5FA !important" }} />
+            <CircularProgress size={64} disableShrink thickness={3} sx={{ color: "gray !important" }} />
         </Box>
     )
 }

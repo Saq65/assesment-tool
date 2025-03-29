@@ -28,7 +28,7 @@ const PaginationCode = () => {
                             : ""
                         } 
                                ${question.status === "attempted"
-                            ? "bg-blue-600"
+                            ? "bg-green-600"
                             : ""
                         } 
                                ${question.status === "skipped"

@@ -36,7 +36,7 @@ const QuizPagination = () => {
         <QuestionTypeSwitch />
         <div className="flex flex-row items-start justify-center flex-shrink-0 space-x-2 ml-auto">
           <div className="flex items-center space-x-2">
-            <span className="w-4 h-4 bg-blue-600 rounded-full"></span>
+            <span className="w-4 h-4 bg-[#00b300] rounded-full"></span>
             <span className="text-sm text-white">
               Attempted ({getAttemptedQuestionsCount(testInfo)})
             </span>

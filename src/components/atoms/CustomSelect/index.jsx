@@ -65,16 +65,27 @@ const CustomSelect = ({
 
       >
         {options.map((option) => (
-          <MenuItem
-            value={option?.id || option?.skillId || option?.levelId}
-            key={option?.id}
-         
-          >
-            {option?.name ||
-              option?.title ||
-              option?.skillName ||
-              option?.levelName}
-          </MenuItem>
+           <MenuItem
+           value={option?.id || option?.skillId || option?.levelId}
+           key={option?.id}
+           sx={{
+             color: 'white', // White text color
+             background:'transparent',
+             '&:hover': {
+               backgroundColor: 'gray !important', // Hover pe gray
+             },
+             '&.Mui-selected': {
+               backgroundColor: 'gray !important', // Selected option bhi gray
+               color: 'white',
+             },
+           }}
+         >  
+           {option?.name ||
+             option?.title ||
+             option?.skillName ||
+             option?.levelName}
+         </MenuItem>
+
         ))}
       </Select>
       {touched && error && <FormHelperText>{helperText}</FormHelperText>}
