@@ -49,7 +49,10 @@ const DatatableActions = ({ setCheckboxSelection, moduleName, append }) => {
                 id="skill-card-menu"
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
+                disablePortal={true}  
                 onClose={handleMenuClose}
+                disableAutoFocusItem={true} // Prevents re-rendering during scroll
+
                 PaperProps={{
                     sx: {
                         backgroundColor: "#343A40", // Dark navy background
@@ -57,7 +60,6 @@ const DatatableActions = ({ setCheckboxSelection, moduleName, append }) => {
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.25)",
                         borderRadius: "8px",
                         padding: "8px 0",
-                        // width: "130px"
                     },
                 }}
             >

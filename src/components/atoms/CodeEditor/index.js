@@ -70,6 +70,7 @@ const CodeEditor = ({ code, setCode, onBlur, onChange, language, setLanguage }) 
         borderRadius: "8px",
         display: "flex",
         flexDirection: "column",
+        backgroundColor:'#272C33'
       }}
     >
 
@@ -89,6 +90,7 @@ const CodeEditor = ({ code, setCode, onBlur, onChange, language, setLanguage }) 
         editorProps={{ $blockScrolling: true }}
         width="100%" // Editor width
         height="100%" // Editor height
+        style={{backgroundColor:'#272C33'}}
         fontSize={14} // Font size
         setOptions={{
           enableBasicAutocompletion: true,

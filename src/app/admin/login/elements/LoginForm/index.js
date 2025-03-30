@@ -131,7 +131,7 @@ const LoginForm = () => {
                         padding: '12px 24px',
                     }}
                     startIcon={
-                        formik.isSubmitting ? <CircularProgress size="1rem" /> : null
+                        formik.isSubmitting ? <CircularProgress size="1.8rem" /> : null
                     }
                     disabled={formik.isSubmitting}
                     type="submit"

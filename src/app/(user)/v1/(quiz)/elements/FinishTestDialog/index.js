@@ -95,7 +95,7 @@ const FinishTestDialog = ({ openDialog, handleCloseDialog }) => {
                         <OverviewChart />
                         <div className="flex flex-col items-start justify-center flex-shrink-0 gap-y-1 mt-2">
                             <div className="flex items-center space-x-2">
-                                <span className="w-4 h-4 bg-blue-600 rounded-full"></span>
+                                <span className="w-4 h-4 bg-[#00b300] rounded-full"></span>
                                 <span className="text-sm text-white">Attempted ({getAttemptedQuestionsCount(testInfo)})</span>
                             </div>
                             <div className="flex items-center space-x-2">
